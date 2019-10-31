@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "新增订单";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@Html.AppendCssFile("/Areas/Wizsen_NE_Project/Views/PactAssort/Detail.css")
+<script src="~/Content/bootstrap/bootstrap.min.js"></script>
+<div class="lr-layout">
+
+    <div class="lr-layout-wrap lr-form-wrap" style="padding-top:20px;">
+        <div class="col-xs-4 jfine-form-header_l">
+            <span class="jfine-form-logo">
+                <img src="/Content/images/formlogo.png" height="50"  style="padding-left: 50px;padding-bottom: 3px;"/>
+            </span>
+        </div>
+        <div class="col-xs-4 jfine-form-header_c">
+            <span class="jfine-form-header-title">国内配套合同</span>
+        </div>
+        <div class="col-xs-4 jfine-form-header_r">
+			  <a id="close" class="btn btn-default">关闭</a>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">项目编码</div>
+            <div id="ProjectNo" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">项目名称</div>
+            <div id="ProjectName" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">合同编码</div>
+            <div id="Code" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">合同名称</div>
+            <div id="Name" class="lr-form-item-value"></div>
+        </div>
+
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">合同类别</div>
+            <div id="Type" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">结算金额</div>
+            <div id="Settlement" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">甲方名称</div>
+            <div id="AName" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">乙方名称</div>
+            <div id="BName" class="lr-form-item-value"></div>
+        </div>
+
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-detail-title">签订日期</div>
+            <div id="SignDate" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-detail-title">签订地点</div>
+            <div id="SignPlace" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-detail-title">合同金额</div>
+            <div id="Amount" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-detail-title">资金来源</div>
+            <div id="FundSource" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-12 lr-form-item">
+            <div class="lr-form-item-detail-title">合同文本</div>
+            <div id="DEC" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#tab_linkman" data-toggle="tab">合同附件</a></li>
+            </ul>
+            <div class="tab-content">
+                <!-- 1 -->
+                <div class="tab-pane fade in active" id="tab_linkman">
+                    <div id="productgird"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@Html.AppendJsFile("/Areas/Wizsen_NE_Project/Views/PactAssort/Detail.js")
+

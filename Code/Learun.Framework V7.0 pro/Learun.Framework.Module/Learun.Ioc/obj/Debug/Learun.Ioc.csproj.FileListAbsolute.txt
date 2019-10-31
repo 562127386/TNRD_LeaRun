@@ -1,0 +1,15 @@
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Learun.Ioc.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Learun.Ioc.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.Unity.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.Unity.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\obj\Debug\Learun.Ioc.csproj.CoreCompileInputs.cache
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\obj\Debug\Learun.Ioc.csproj.CopyComplete
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\obj\Debug\Learun.Ioc.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Ioc\obj\Debug\Learun.Ioc.pdb

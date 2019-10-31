@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "项目管理";
+    Layout = "~/Views/Shared/_Form2.cshtml";
+}
+<div class="lr-layout" style="padding:8px;">
+    <div class="lr-form-wrap lr-layout-wrap" style="padding-top:5px;">
+
+        @*<div class="col-xs-12 lr-form-item lr-portal-panel-title">
+            <i class="fa fa-tags"></i>&nbsp;&nbsp;基础数据
+        </div>*@
+        <legend>
+            <div class="color"><span style="font-weight:bold;font-size:12px;border-left:5px solid #2D81DD">基础数据(必填项)</span></div>
+        </legend>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目编码<font face="宋体">*</font></div>
+            <input id="Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目名称<font face="宋体">*</font></div>
+            <input id="Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">建设单位<font face="宋体">*</font></div>
+            <input id="Company" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" value="青岛能源泰能热电有限公司" readonly />
+        </div>
+        @*<div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">开发商<font face="宋体">*</font></div>
+            <input id="Developers" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>*@
+
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目地址<font face="宋体">*</font></div>
+            <input id="Address" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">实施单位<font face="宋体">*</font></div>
+            <div id="Dept_Code" name="Dept_Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+            <input id="Dept_Name" name="Dept_Name" type="hidden" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">资金来源<font face="宋体">*</font></div>
+            <div id="CapitalSource" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目性质<font face="宋体">*</font></div>
+            <div id="Nature" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">工程编号<font face="宋体">*</font></div>
+            <input id="WorkNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">开始时间<font face="宋体">*</font></div>
+            <input id="BeginTime" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM'})" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">结束时间<font face="宋体">*</font></div>
+            <input id="EndTime" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM'})" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目状态<font face="宋体">*</font></div>
+            <div id="Node" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">备注</div>
+            <input id="Remark" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目负责人</div>
+            <input id="Principal" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目负责人电话</div>
+            <input id="Phone" type="text" class="form-control" />
+        </div>
+
+        @*<div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">户数</div>
+            <input id="Households" type="text" class="form-control" />
+        </div>
+
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">实施年份</div>
+            <input id="ImplementYear" type="text" class="form-control" readonly="readonly" />
+        </div>*@
+        @*<div class="col-xs-4 lr-form-item"  data-table="TNRD_Project_Datails" >
+            <div class="lr-form-item-title">立项年份<font face="宋体">*</font></div>
+            <input id="Year" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})" isvalid="yes" checkexpession="NotNull" />
+        </div>*@
+
+
+
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Project_Datails">
+        </div>
+
+    </div>
+    </div>
+
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/ProjectDatails/Form.js")
+
+
+<style>
+.lr-layout {
+    position:relative;
+    height:100%;
+    width:100%;
+    //padding:15px;
+}
+.lr-layout-wrap {
+    position:relative;
+    height:100%;
+    width:100%;
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+}
+    .thumbnail {
+        width: 100%;
+        display: block;
+        padding: 4px;
+        float: left;
+        margin-bottom: 20px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        border: 5px solid #ddd;
+        border-radius: 4px;
+        -webkit-transition: border .2s ease-in-out;
+        -o-transition: border .2s ease-in-out;
+        transition: border .2s ease-in-out;
+    }
+</style>

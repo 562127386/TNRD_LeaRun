@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "付款明细";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">合同名称<font face="宋体">*</font></div>
+        <input id="PactName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly="readonly" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">合同类型<font face="宋体">*</font></div>
+        <input id="PactType" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly="readonly" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">乙方公司<font face="宋体">*</font></div>
+        <input id="PayCompany" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly="readonly" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">入账金额<font face="宋体">*</font></div>
+        <input id="bookedAmount" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">付款金额<font face="宋体">*</font></div>
+        <input id="PayAmount" type="text" class="form-control" isvalid="yes" checkexpession="Num" readonly="readonly"/>
+    </div>
+
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">挂账金额<font face="宋体">*</font></div>
+        <input id="hangAmount" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">付款日期<font face="宋体">*</font></div>
+        <input id="PayDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">凭证号<font face="宋体">*</font></div>
+        <input id="VoucherNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/PayDatails/Form.js")

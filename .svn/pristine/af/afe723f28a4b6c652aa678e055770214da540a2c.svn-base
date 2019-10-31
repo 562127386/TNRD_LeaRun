@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "合同附件";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">附件类别<font face="宋体">*</font></div>
+        <input id="AdjunctType" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">附件<font face="宋体">*</font></div>
+        <div id="fileInfo" style="display: inline-block;margin-right:8px;"></div>
+        <a class="btn btn-primary dropdown-text" href="javascript:open_upload('AdjunctName')"><i class="fa fa-upload"></i>上传附件</a>
+        <input id="AdjunctName" name="AdjunctName" type="hidden" class="form-control" />
+        <input id="Url" name="Url" type="hidden" class="form-control" />
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/Wizsen_TNRD_Pact/PactAdjunctForm.js")

@@ -1,0 +1,138 @@
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\libeay32.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\libgcc_s_dw2-1.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\mingwm10.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ssleay32.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\wkhtmltox0.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Excel.dll.config
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Excel.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Excel.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Dapper.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Base.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Base.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Factory.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Redis.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.Repository.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Util.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Newtonsoft.Json.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Pechkin.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Pechkin.Synchronized.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Redis.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Interfaces.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Text.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Ioc.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.Unity.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.OOXML.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\LumiSoft.Net.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Yahoo.Yui.Compressor.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Organization.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Common.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.OpenXml4Net.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\EcmaScript.NET.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Base.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Factory.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Redis.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.Repository.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.Repository.dll.config
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Util.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Util.dll.config
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Base.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Base.dll.config
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Dapper.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Newtonsoft.Json.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Redis.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Interfaces.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Text.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.dll.config
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Ioc.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.Unity.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\LumiSoft.Net.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Organization.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Organization.dll.config
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Common.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.csprojAssemblyReference.cache
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.csproj.CoreCompileInputs.cache
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.csproj.CopyComplete
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\libeay32.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\libgcc_s_dw2-1.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\mingwm10.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ssleay32.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\wkhtmltox0.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Excel.dll.config
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Excel.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Excel.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Dapper.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Base.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Base.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Factory.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Redis.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.Repository.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Util.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Newtonsoft.Json.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Pechkin.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Pechkin.Synchronized.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Redis.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Interfaces.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Text.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Ioc.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.Unity.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.OOXML.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\LumiSoft.Net.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Yahoo.Yui.Compressor.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Organization.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Common.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.OpenXml4Net.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\EcmaScript.NET.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Base.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Factory.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Cache.Redis.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.Repository.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.Repository.dll.config
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Util.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Util.dll.config
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Base.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Base.dll.config
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Dapper.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Newtonsoft.Json.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Redis.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Interfaces.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Text.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.DataBase.dll.config
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Ioc.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.Unity.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\NPOI.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\LumiSoft.Net.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Organization.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Learun.Application.Organization.dll.config
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\ServiceStack.Common.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.csprojAssemblyReference.cache
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.csproj.CoreCompileInputs.cache
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.csproj.CopyComplete
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.dll
+E:\OneDrive\工作项目\泰能热电_LeaRun\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Application.Module\Learun.Application.Excel\obj\Debug\Learun.Application.Excel.pdb

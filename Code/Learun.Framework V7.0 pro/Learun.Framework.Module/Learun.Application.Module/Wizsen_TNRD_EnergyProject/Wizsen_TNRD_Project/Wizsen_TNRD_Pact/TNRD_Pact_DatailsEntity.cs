@@ -1,0 +1,331 @@
+﻿using Learun.Util;
+using Learun.Util.Operat;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Wizsen_TNRD_EnergyProject.Wizsen_TNRD_Project
+{
+    /// <summary>
+    /// 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架
+    /// Copyright (c) 2013-2018 上海力软信息技术有限公司
+    /// 创 建：超级管理员
+    /// 日 期：2019-02-25 14:30
+    /// 描 述：Wizsen_TNRD_Pact
+    /// </summary>
+    public class TNRD_Pact_DatailsEntity 
+    {
+        #region 实体成员
+        /// <summary>
+        /// Id
+        /// </summary>
+        [Column("ID")]
+        public string Id { get; set; }
+        /// <summary>
+        /// BindId
+        /// </summary>
+        [Column("BINDID")]
+        public string BindId { get; set; }
+        /// <summary>
+        /// 项目编号
+        /// </summary>
+        [Column("PROJECTNO")]
+        public string ProjectNo { get; set; }
+        /// <summary>
+        /// 项目名称
+        /// </summary>
+        [Column("PROJECTNAME")]
+        public string ProjectName { get; set; }
+        /// <summary>
+        /// 合同编号
+        /// </summary>
+        [Column("CODE")]
+        public string Code { get; set; }
+        /// <summary>
+        /// 合同名称
+        /// </summary>
+        [Column("NAME")]
+        public string Name { get; set; }
+        /// <summary>
+        /// 付往单位
+        /// </summary>
+        [Column("BNAME")]
+        public string BName { get; set; }
+        /// <summary>
+        /// 已付金额
+        /// </summary>
+        [Column("PAIDAMOUNT")]
+        public decimal? PaidAmount { get; set; }
+        /// <summary>
+        /// 未付金额
+        /// </summary>
+        [Column("UNPAIDAMOUNT")]
+        public decimal? UnPaidAmount { get; set; }
+        /// <summary>
+        /// 合同类型
+        /// </summary>
+        [Column("TYPE")]
+        public string Type { get; set; }
+        /// <summary>
+        /// 结算金额
+        /// </summary>
+        [Column("SETTLEMENT")]
+        public decimal? Settlement { get; set; }
+        /// <summary>
+        /// 立项年份
+        /// </summary>
+        [Column("PROJECTYEAR")]
+        public decimal? ProjectYear { get; set; }
+        /// <summary>
+        /// 合同金额
+        /// </summary>
+        [Column("AMOUNT")]
+        public decimal? Amount { get; set; }
+        /// <summary>
+        /// 预算金额
+        /// </summary>
+        [Column("BUDGETAMOUNT")]
+        public decimal? BudgetAmount { get; set; }
+        /// <summary>
+        /// 入账金额
+        /// </summary>
+        [Column("BOOKEDAMOUNT")]
+        public decimal? BookedAmount { get; set; }
+        /// <summary>
+        /// 挂账金额
+        /// </summary>
+        [Column("HANGAMOUNT")]
+        public decimal? HangAmount { get; set; }
+        /// <summary>
+        /// 转资
+        /// </summary>
+        [Column("TURNAMOUNT")]
+        public decimal? TurnAmount { get; set; }
+        /// <summary>
+        /// 比例
+        /// </summary>
+        [Column("RATIO")]
+        public decimal? Ratio { get; set; }
+        /// <summary>
+        /// 签订日期
+        /// </summary>
+        [Column("SIGNDATE")] 
+        public DateTime? SignDate { get; set; }
+        /// <summary>
+        /// 签订地点
+        /// </summary>
+        [Column("SIGNPLACE")] 
+        public string SignPlace { get; set; }
+        /// <summary>
+        /// 合同概述
+        /// </summary>
+        [Column("SUMMARIZE")]
+        public string Summarize { get; set; }
+        /// <summary>
+        /// 合同概述
+        /// </summary>
+        [Column("PACTWAY")]
+        public string PactWay { get; set; }
+        /// <summary>
+        /// 发生期间
+        /// </summary>
+        [Column("SIGNTERM")]
+        public DateTime? SignTerm { get; set; }
+        /// <summary>
+        /// 发生年份
+        /// </summary>
+        [Column("SIGNYEAR")]
+        public decimal? SignYear { get; set; }
+        /// <summary>
+        /// 财务凭证
+        /// </summary>
+        [Column("VOUCHER")]
+        public string Voucher { get; set; }
+        /// <summary>
+        /// 付款类型
+        /// </summary>
+        [Column("PAYTYPE")]
+        public string PayType { get; set; }
+        /// <summary>
+        /// 资金来源
+        /// </summary>
+        [Column("FUNDSOURCE")]
+        public string FundSource { get; set; }
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [Column("REMARK")]
+        public string Remark { get; set; }
+        /// <summary>
+        /// 创建日期
+        /// </summary>
+        [Column("CREATEDATE")]
+        public DateTime? CreateDate { get; set; }
+        /// <summary>
+        /// 创建人Id
+        /// </summary>
+        [Column("CREATEUSERID")]
+        public string CreateUserId { get; set; }
+        /// <summary>
+        /// 创建人名称
+        /// </summary>
+        [Column("CREATEUSERNAME")]
+        public string CreateUserName { get; set; }
+        /// <summary>
+        /// 修改日期
+        /// </summary>
+        [Column("UPDATEDATE")]
+        public DateTime? UpdateDate { get; set; }
+        /// <summary>
+        /// 修改人Id
+        /// </summary>
+        [Column("UPDATEUSERID")]
+        public string UpdateUserId { get; set; }
+        /// <summary>
+        /// 修改人
+        /// </summary>
+        [Column("UPDATEUSERNAME")]
+        public string UpdateUserName { get; set; }
+        /// <summary>
+        /// Remark1
+        /// </summary>
+        [Column("REMARK1")]
+        public string Remark1 { get; set; }
+        /// <summary>
+        /// Remark2
+        /// </summary>
+        [Column("REMARK2")]
+        public string Remark2 { get; set; }
+        /// <summary>
+        /// Remark3
+        /// </summary>
+        [Column("REMARK3")]
+        public string Remark3 { get; set; }
+        /// <summary>
+        /// Remark4
+        /// </summary>
+        [Column("REMARK4")]
+        public string Remark4 { get; set; }
+        /// <summary>
+        /// Remark5
+        /// </summary>
+        [Column("REMARK5")]
+        public string Remark5 { get; set; }
+        /// <summary>
+        /// Remark6
+        /// </summary>
+        [Column("REMARK6")]
+        public string Remark6 { get; set; }
+        /// <summary>
+        /// Remark7
+        /// </summary>
+        [Column("REMARK7")]
+        public string Remark7 { get; set; }
+        /// <summary>
+        /// Remark8
+        /// </summary>
+        [Column("REMARK8")]
+        public string Remark8 { get; set; }
+        /// <summary>
+        /// Remark9
+        /// </summary>
+        [Column("REMARK9")]
+        public string Remark9 { get; set; }
+        /// <summary>
+        /// Remark10
+        /// </summary>
+        [Column("REMARK10")]
+        public string Remark10 { get; set; }
+
+        /// <summary>
+        /// 结算金额
+        /// </summary>
+        [Column("SETTLEMONEY")]
+        public decimal? settleMoney { get; set; }
+        /// <summary>
+        /// 应付金额
+        /// </summary>
+        [Column("PAYABLEMONEY")]
+        public decimal? payableMoney { get; set; }
+        #endregion
+
+        #region 扩展操作
+        /// <summary>
+        /// 新增调用
+        /// </summary>
+        public void Create()
+        {
+            var user = LoginUserInfo.Get();
+            this.CreateDate = System.DateTime.Now;
+            this.CreateUserId = user.account;
+            this.CreateUserName = user.realName;
+            this.Id = Guid.NewGuid().ToString();
+        }
+        /// <summary>
+        /// 编辑调用
+        /// </summary>
+        /// <param name="keyValue"></param>
+        public void Modify(string keyValue)
+        {
+            var user = LoginUserInfo.Get();
+            this.UpdateDate = System.DateTime.Now;
+            this.UpdateUserId = user.account;
+            this.UpdateUserName = user.realName;
+            this.Id = keyValue;
+        }
+        #endregion
+
+        #region 扩展字段
+        /// <summary>
+        /// 合同类型
+        /// </summary>
+        [Column("contractType")]
+        public string contractType { get; set; }
+        /// <summary>
+        /// 合同状态
+        /// </summary>
+        [Column("contractStatus")]
+        public string contractStatus { get; set; }
+        /// <summary>
+        /// 供应商
+        /// </summary>
+        [Column("supplier")]
+        public string supplier { get; set; }
+        /// <summary>
+        /// 采购组织
+        /// </summary>
+        [Column("purchaseOrg")]
+        public string purchaseOrg { get; set; }
+        /// <summary>
+        /// 部门
+        /// </summary>
+        [Column("department")]
+        public string department { get; set; }
+        /// <summary>
+        /// 员工
+        /// </summary>
+        [Column("employee")]
+        public string employee { get; set; }
+        /// <summary>
+        /// 币种
+        /// </summary>
+        [Column("currency")]
+        public string currency { get; set; }
+        /// <summary>
+        /// 中止日期
+        /// </summary>
+        [Column("abortDate")]
+        public string abortDate { get; set; }
+        /// <summary>
+        /// 预算限额
+        /// </summary>
+        [Column("budgetRestrict")]
+        public string budgetRestrict { get; set; }
+        /// <summary>
+        /// 到货地点
+        /// </summary>
+        [Column("deliveryPlace")]
+        public string deliveryPlace { get; set; }
+        #endregion
+    }
+}
+

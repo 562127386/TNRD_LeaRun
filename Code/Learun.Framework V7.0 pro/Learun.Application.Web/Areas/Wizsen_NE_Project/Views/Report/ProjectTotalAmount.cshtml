@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "履约保函";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                项目金额合计
+            </div>
+            @*<div class="print-info">
+                    <table class="form">
+                        <tr>
+                            <th class="formTitle" style="">设备名称：</th>
+                            <td class="formValue" style="">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务单号：</th>
+                            <td class="formValue">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>*@
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td style="width: 50px;">序号</td>
+                            <td style="width: 120px;">一级项目名称</td>
+                            <td style="width: 120px;">亚行设备购置费（元）</td>
+                            <td style="width: 120px;">已付金额（元）</td>
+                            <td style="width: 120px;">付款比例（%）</td>
+                            <td style="width: 120px;">国内配套合同总额（元）</td>
+                            <td style="width: 120px;">国内配套合同已付金额（元）</td>
+                            <td style="width: 120px;">付款比例（%）</td>
+                            <td style="width: 120px;">项目总投资（元）</td>
+                        </tr>
+
+                        @{
+                            decimal paidAmount;
+                            decimal Amount;
+                            decimal TaxTotal;
+                            decimal payTaxTotal;
+
+                            decimal sumpaidAmount = 0;
+                            decimal sumAmount = 0;
+                            decimal sumTaxTotal = 0;
+                            decimal sumpayTaxTotal = 0;
+                            for (int i = 0; i < @ViewBag.model.Rows.Count; i++)
+                            {
+                                paidAmount = @ViewBag.model.Rows[i]["paidAmount"];
+                                Amount = @ViewBag.model.Rows[i]["Amount"];
+                                payTaxTotal = @ViewBag.model.Rows[i]["payTaxTotal"];
+                                TaxTotal = @ViewBag.model.Rows[i]["TaxTotal"];
+                                sumpaidAmount += paidAmount;
+                                sumAmount += Amount;
+                                sumTaxTotal += TaxTotal;
+                                sumpayTaxTotal += payTaxTotal;
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@ViewBag.model.Rows[i]["BaseName"] </td>
+                                    <td>@(TaxTotal) </td>
+                                    <td>@(payTaxTotal) </td>
+                                    <td>@(TaxTotal == 0 ? "0" : (payTaxTotal / TaxTotal * 100).ToString("0.00"))%</td>
+                                    <td>@(Amount) </td>
+                                    <td>@(paidAmount) </td>
+                                    <td>@(Amount == 0 ? "0" : (paidAmount / Amount * 100).ToString("0.00"))%</td>
+                                    <td>@(TaxTotal + Amount)</td>
+                                </tr>
+                            }
+
+
+                            <tr>
+                                <td>@(@ViewBag.model.Rows.Count + 1)</td>
+                                <td>金额汇总（元）</td>
+                                <td>@(sumTaxTotal) </td>
+                                <td>@(sumpayTaxTotal) </td>
+                                <td>@(sumTaxTotal == 0 ? "0" : (sumpayTaxTotal / sumTaxTotal * 100).ToString("0.00"))%</td>
+                                <td>@(sumAmount) </td>
+                                <td>@(sumpaidAmount) </td>
+                                <td>@(sumAmount == 0 ? "0" : (sumpaidAmount / sumAmount * 100).ToString("0.00"))%</td>
+                                <td>@(sumTaxTotal + sumAmount)</td>
+                            </tr>
+
+                        }
+
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+
+                        @*<th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>
+

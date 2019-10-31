@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "采购报表";
+    Layout = "~/Views/Shared/_ReportTemplate.cshtml";
+}
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                <br>亚行<span>@ViewBag.facility.ProjectName</span>项目设备到货验收单
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+                        <td colspan="4"></td>
+                        <th class="formTitle" style="">项目编号：</th>
+                        <td class="formValue" style="">
+                            <input type="text" style="width:98%;" class="form-control " value="" />
+                        </td>
+                        @*<th class="formTitle" style="">业务单号：</th>
+                            <td class="formValue">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td style="width:100px;" colspan="2">供货单位</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">验收日期</td>
+                            <td style="width:300px;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">到货设备明细：</td>
+                            <td style="width:300px;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50px;" colspan="2">序号</td>
+                            <td style="width:120px;" colspan="3">设备名称</td>
+                            <td style="width:120px;" colspan="3">型号及规格</td>
+                            <td style="width:60px;" colspan="2">单位</td>
+                            <td style="width:60px;" colspan="2">数量</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="2"></td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="2"></td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50px;" rowspan="3" colspan="2">验收意见</td>
+                            <td style="width:100px;" colspan="2">项目单位</td>
+                            <td style="width: 300px;" colspan="3"></td>
+                            <td style="width:100px;" colspan="2">单位项目现场接收人</td>
+                            <td style="width: 300px;" colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">战略投资部亚行项目办现场接收人</td>
+                            <td style="width: 300px;" colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">供货单位现场交货人</td>
+                            <td style="width: 300px;" colspan="8"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+
+                        @*<th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>

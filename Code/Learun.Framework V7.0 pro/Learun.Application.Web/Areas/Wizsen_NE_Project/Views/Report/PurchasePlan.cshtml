@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "履约保函";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                <br>亚行项目__________________________年度设备采购计划表
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+                        <th class="formTitle" style="">上报单位：</th>
+                        <td class="formValue" style="">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（公章）
+                        </td>
+                        <th class="formTitle" style="">业务单号：</th>
+                        <td class="formValue">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日
+                        </td>
+                        @*<th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td style="width: 50px;">序号</td>
+                            <td style="width: 60px;">项目单位</td>
+                            <td style="width: 60px;">项目名称</td>
+                            <td style="width: 60px;">主要建设内容</td>
+                            <td style="width: 60px;">项目总投资额（万元）</td>
+                            <td style="width: 60px;">资金来源</td>
+                            <td style="width: 60px;">亚行资金采购内容</td>
+                            <td style="width: 60px;">亚行资金采购金额（万元）</td>
+                            <td style="width: 60px;">计划采购时间</td>
+                            <td style="width: 60px;">备注</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+                        @*<td colspan="10">说明：</td>
+                            <td colspan="10">1.亚行程序复杂，采购周期较长，一般年初采购年末用，年末采购下年初用。</td>
+                            <td colspan="10">2.上报计划后，要积极准备详细的采购技术要求以备招标。</td>
+                            <td colspan="10">3.本计划纸质和电子版一并上报。</td>
+                            <td colspan="10">4.资金来源：自筹/配套费/亚行贷款。</td>
+                            <td colspan="10">5.各公司需将已纳入的亚行贷款项目及配套的其它费用编入本公司次年生产经营计划。</td>*@
+                        <th style="width:100px;">说明：</th>
+                        <td colspan="9"></td>
+                    </tr>
+                    <tr>
+                        <th style="width:100px;"></th>
+                        <td style="width: 700px;" colspan="9">
+                            1.亚行程序复杂，采购周期较长，一般年初采购年末用，年末采购下年初用。
+                            <br />2.上报计划后，要积极准备详细的采购技术要求以备招标。
+                            <br />3.本计划纸质和电子版一并上报。
+                            <br />4.资金来源：自筹/配套费/亚行贷款。
+                            <br />5.各公司需将已纳入的亚行贷款项目及配套的其它费用编入本公司次年生产经营计划。
+                        </td>
+                        @*<th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>
+

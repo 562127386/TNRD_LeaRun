@@ -1,0 +1,64 @@
+﻿.lr-layout {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+.lr-layout-wrap {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+}
+
+.jfgrid-data-cell {
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.top-btn-tool {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 6px 6px;
+    padding: 8px;
+}
+
+.lr-form-item-detail-title {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.jfine-form-header_l {
+    height: 50px;
+    padding-left: 20px;
+}
+
+.jfine-form-header_c {
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.jfine-form-header-title {
+    color: #333333;
+    font-size: 24px !important;
+    font-weight: bold;
+    height: 50px;
+}
+
+.jfine-form-header_r {
+    height: 50px;
+    vertical-align: bottom;
+    text-align: right;
+    padding-right: 20px;
+}

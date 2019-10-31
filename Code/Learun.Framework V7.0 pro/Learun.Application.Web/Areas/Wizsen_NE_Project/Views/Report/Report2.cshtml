@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "履约保函";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                新增报表1
+            </div>
+            @*<div class="print-info">
+                    <table class="form">
+                        <tr>
+                            <th class="formTitle" style="">设备名称：</th>
+                            <td class="formValue" style="">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务单号：</th>
+                            <td class="formValue">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>*@
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+
+                        <tr>
+                            <td style="width: 50px;">项目名称</td>
+                            <td style="width: 120px;">内部工程编号</td>
+                            <td style="width: 120px;">建设单位</td>
+                            <td style="width: 120px;">立项年份</td>
+                            <td style="width: 120px;">工程地址</td>
+                            <td style="width: 120px; ">开发商</td>
+                            <td style="width: 120px; ">建筑面积</td>
+                            <td style="width: 120px;">舒适房（万平）</td>
+                            <td style="width: 120px;">供热面积（万平）</td>
+                            <td style="width: 120px;">户数</td>
+                            <td style="width: 120px;">实施年份</td>
+                            <td style="width: 120px;">一网长度</td>
+                            <td style="width: 120px;">一网投资</td>
+                        </tr>
+
+                        @{
+
+                            for (int i = 0; i < @ViewBag.model.Count; i++)
+                            {
+                                <tr>
+                                    <td>@ViewBag.model[i].Name</td>
+                                    <td>@ViewBag.model[i].Code</td>
+                                    <td></td>
+                                    <td>@ViewBag.model[i].ProjectDate</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>@ViewBag.model[i].Number</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>@ViewBag.model[i].Number</td>
+                                    <td>@ViewBag.model[i].ProjectDate</td>
+                                    <td></td>
+                                    <td>@ViewBag.model[i].ANet</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+
+                        @*
+                            <th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>

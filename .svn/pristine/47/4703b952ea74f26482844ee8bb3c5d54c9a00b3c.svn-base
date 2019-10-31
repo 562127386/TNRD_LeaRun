@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "合同报表";
+    Layout = "~/Views/Shared/_ReportTemplate.cshtml";
+}
+<div class="lr-layout ui-report">
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap lr-layout-wrap-notitle">
+            <div class="lr-layout-tool">
+                <div class="lr-layout-tool-left">
+                    <div class="lr-layout-tool-item">
+                        <span class="btn btn-sm">&nbsp;合同类型:</span>
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <div id="contractType" class="form-control" style="width:160px"></div>
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <span class="btn btn-sm">&nbsp;合同名称:</span>
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <input id="pactName" type="text" class="form-control" placeholder="合同名称" style="width:160px" />
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <span class="btn btn-sm">&nbsp;乙方单位:</span>
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <input id="supplier" type="text" class="form-control" placeholder="乙方单位" style="width:160px" />
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="lrlg">查询</span></a>
+                    </div>
+
+                </div>
+                <div class="lr-layout-tool-right">
+                    <div class="btn-group btn-group-sm" learun-authorize="no">
+                        <a id="lr-replace" class="btn btn-default"><i class="fa fa-refresh"></i>&nbsp;<span class="lrlg">刷新</span></a>
+                        <a id="lr-print" class="btn btn-default"><i class="fa fa-print"></i>&nbsp;<span class="lrlg">打印</span></a>
+                        <a id="lr-export" class="btn btn-default"><i class="fa fa-sign-out"></i>&nbsp;<span class="lrlg">导出</span></a>
+                        @*<a id="lr_payDetail" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;查看付款明细</a>*@
+                        @*<a id="lr-AssLedger" class="btn btn-default"><i class="fa fa-sign-out"></i>&nbsp;<span class="lrlg">国内配套合同台账</span></a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="lr-layout-grid">
+                <div class="grid-title">合同台账</div>
+                <div class="lr-layout-body" id="gridtable"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Content/echarts/echarts.min.js"></script>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/Report/PactReport.js")

@@ -1,0 +1,262 @@
+﻿
+@{
+    ViewBag.Title = "项目信息";
+    Layout = "~/Views/Shared/_Browse.cshtml";
+}
+@Html.AppendCssFile("/Areas/Wizsen_TNRD_Project/Views/Wizsen_TNRD_Pact/Browse.css")
+<script src="~/Content/bootstrap/bootstrap.min.js"></script>
+<div class="lr-layout" id="form">
+
+    <div class="lr-layout-wrap lr-form-wrap" style="padding-top:20px;">
+        <legend>
+            <div class="color"><span style="font-weight:bold;font-size:12px;border-left:5px solid #2D81DD">基础数据</span></div>
+        </legend>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目编码</div>
+            <input id="Code" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目名称</div>
+            <input id="Name" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">立项时间</div>
+            <input id="Date" type="text" class="form-control " onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" style="background-color: #FFFFFF!important;" />
+        </div>
+        @*<div class="col-xs-2 lr-form-item"  data-table="TNRD_Project_Datails" >
+            <div class="lr-form-item-title">立项年份<font face="宋体">*</font></div>
+            <input id="Year" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})" isvalid="yes" checkexpession="NotNull" />
+        </div>*@
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">资金来源</div>
+            <input id="CapitalSource" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">项目状态</div>
+            <input id="Node" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">总建筑面积</div>
+            <input id="CoveredArea" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">建设单位</div>
+            <input id="Company" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">开发商</div>
+            <input id="Developers" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">地址</div>
+            <input id="Address" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">内部工号</div>
+            <input id="WorkNo" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">户数</div>
+            <input id="Households" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">实施年份</div>
+            <input id="ImplementYear" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">立项文号</div>
+            <input id="Titanict" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">立项总投资</div>
+            <input id="Amount" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">批复文号</div>
+            <input id="ApprovalTitanict" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">投资批复时间</div>
+            <input id="ApprovalTime" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">预算评审值</div>
+            <input id="Review" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">批复决算文号</div>
+            <input id="ApprovalFinal" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">决算值</div>
+            <input id="FinalValue" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">一次网长度</div>
+            <input id="OnceNetLength" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">二次网长度</div>
+            <input id="TwiceNetLength" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">立管长度</div>
+            <input id="RiserLength" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">换热站个数</div>
+            <input id="HeatStandNum" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title"></div>
+            <input id="Remark" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        @*<div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">备注</div>
+            <input id="Remark" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>*@
+        @*<div class="col-xs-12 lr-form-item lr-portal-panel-title">
+            <i class="fa fa-tags"></i>&nbsp;&nbsp;概算数据&nbsp;&nbsp;&nbsp;(单位:万元)
+        </div>*@
+        <legend>
+            <div class="color"><span style="font-weight:bold;font-size:12px;border-left:5px solid #2D81DD">概算数据（万元）</span></div>
+        </legend>
+        @*<div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">工程费</div>
+            <input id="ProjectFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>*@
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">一次网费用</div>
+            <input id="OnceNetFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">二次网费用</div>
+            <input id="TwiceNetFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">立管费用</div>
+            <input id="RiserFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">换热站费用</div>
+            <input id="HeatStandFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        @*<div class="col-xs-2 lr-form-item"  data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">前期费</div>
+            <input id="AgoFee" type="text" class="form-control" />
+        </div>*@
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">交易服务费</div>
+            <input id="ServiceFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">招标代理费</div>
+            <input id="BiddingFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">造价咨询费</div>
+            <input id="CostFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">施工图审查费</div>
+            <input id="ReviewFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">专家评审费</div>
+            <input id="PeerReviewFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">其他前期费</div>
+            <input id="OtherAgoFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">勘察费</div>
+            <input id="ProspectFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">设计费</div>
+            <input id="DesignFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">监理费</div>
+            <input id="ControlFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        @*<div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">管理费</div>
+            <input id="ManageFee" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>*@
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">环评费</div>
+            <input id="EnvironmentFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">安评费</div>
+            <input id="SafetyFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        @*<div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">扬尘防治增加费</div>
+            <input id="DustFee" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>*@
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">掘路费</div>
+            <input id="DiggingFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        @*<div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">劳动卫生评价费</div>
+            <input id="HealthFee" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>*@
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">其他费用</div>
+            <input id="OtherFeeD" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-2 lr-form-item" data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">预备费</div>
+            <input id="ReadyFee" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        @*<div class="col-xs-2 lr-form-item"  data-table="TNRD_Project_Datails">
+            <div class="lr-form-item-title">总管理费</div>
+            <input id="TotalManageFee" type="text" class="form-control" />
+        </div>*@
+
+        @*<div class="col-xs-2 lr-form-item"  data-table="TNRD_Project_Datails" >
+            <div class="lr-form-item-title">概算</div>
+            <input id="Estimate" type="text" class="form-control" />
+        </div>*@
+
+
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#tab_linkman" data-toggle="tab">项目附件</a></li>
+                <li role="presentation"><a href="#tab_file" data-toggle="tab">合同</a></li>
+                <li role="presentation"><a href="#tab_file2" data-toggle="tab">资金下达</a></li>
+                @*<li role="presentation"><a href="#tab_file3" data-toggle="tab">设备</a></li>*@
+            </ul>
+            <div class="tab-content">
+                <!-- 1 -->
+                <div class="tab-pane fade in active" id="tab_linkman">
+                    <div id="productgird"></div>
+                </div>
+
+                <!-- 2 -->
+                <div class="tab-pane fade" id="tab_file">
+                    <div id="productgird2"></div>
+                </div>
+
+                <!-- 3 -->
+                <div class="tab-pane fade" id="tab_file2">
+                    <div id="productgird3"></div>
+                </div>
+
+                <!-- 4 -->
+                @*<div class="tab-pane fade" id="tab_file3">
+                    <div id="productgird4"></div>
+                </div>*@
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/ProjectDatails/Detail.js")
+

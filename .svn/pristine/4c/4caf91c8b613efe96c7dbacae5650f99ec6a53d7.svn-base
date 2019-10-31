@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "合同查看";
+    Layout = "~/Views/Shared/_Browse.cshtml";
+}
+@Html.AppendCssFile("/Areas/Wizsen_TNRD_Project/Views/Wizsen_TNRD_Pact/Browse.css")
+<script src="~/Content/bootstrap/bootstrap.min.js"></script>
+<div class="lr-layout">
+
+    <div class="lr-layout-wrap lr-form-wrap" style="padding-top:20px;">
+        <legend>
+            <div class="color"><span style="font-weight:bold;font-size:12px;border-left:5px solid #2D81DD">合同信息</span></div>
+        </legend>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails" hidden>
+            <div class="lr-form-item-title">项目编码</div>
+            <input id="ProjectNo" type="text" class="form-control" readonly="readonly" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">项目名称<font face="宋体">*</font></div>
+            <input id="ProjectName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly="readonly" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同类型</div>
+            <input id="contractType" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同编码</div>
+            <input id="Code" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同名称</div>
+            <input id="Name" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同状态</div>
+            <input id="contractStatus" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同金额(元)</div>
+            <input id="Amount" type="text" class="form-control" />
+        </div>
+        <legend>
+            <div class="color"><span style="font-weight:bold;font-size:12px;border-left:5px solid #2D81DD">付款信息</span></div>
+        </legend>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">部门</div>
+            <input id="department" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">人员</div>
+            <input id="department" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">供应商</div>
+            <input id="supplier" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">采购组织</div>
+            <input id="purchaseOrg" type="text" class="form-control" />
+        </div>
+
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">币种</div>
+            <input id="currency" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">预付款</div>
+            <input id="BudgetAmount" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">预付款限额</div>
+            <input id="budgetRestrict" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">发生日期<font face="宋体">*</font></div>
+            <input id="SignDate" type="text" class="form-control " />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">计划终止日期</div>
+            <input id="abortDate" type="text" class="form-control " />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">付款类型</div>
+            <input id="PayType" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">备注</div>
+            <input id="Remark" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#tab_linkman" data-toggle="tab">设备信息</a></li>
+                <li role="presentation"><a href="#tab_file" data-toggle="tab">合同附件信息</a></li>
+                <li role="presentation"><a href="#tab_file2" data-toggle="tab">付款明细</a></li>
+            </ul>
+            <div class="tab-content">
+                <!-- 1 -->
+                <div class="tab-pane fade in active" id="tab_linkman">
+                    <div id="TNRD_Facility_Base"></div>
+                </div>
+
+                <!-- 2 -->
+                <div class="tab-pane fade" id="tab_file">
+                    <div id="productgird2"></div>
+                </div>
+
+                <!-- 3 -->
+                <div class="tab-pane fade" id="tab_file2">
+                    <div id="productgird3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/Wizsen_TNRD_Pact/Browse.js")
+

@@ -1,0 +1,242 @@
+﻿.form {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-collapse: collapse;
+    border-width: 3px 1px 1px;
+    table-layout: fixed
+}
+
+    .form .formTitle {
+        position: relative;
+        left: 0px;
+        text-align: right;
+        white-space: nowrap;
+        font-weight: normal;
+        width: 90px;
+        padding-right: 15px;
+    }
+
+        .form .formTitle font {
+            color: red;
+            position: absolute;
+            right: 0px;
+        }
+
+    .form .formValue {
+        position: relative;
+        padding: 5px;
+        width: auto;
+    }
+
+        .form .formValue input.form-control {
+            height: 30px;
+            line-height: 30px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-right: 0px;
+            padding-left: 5px;
+            resize: none;
+            border-radius: 0px;
+            box-shadow: none;
+        }
+
+.print-box {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+    background: #fff;
+}
+
+.print-title {
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.print-subtitle {
+    text-align: center;
+}
+
+.print-info {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+    .print-info table .formTitle {
+        text-align: left;
+        width: 50px;
+        font-size: 12px;
+    }
+
+    .print-info table .formValue {
+        text-align: left;
+        font-size: 12px;
+    }
+
+        .print-info table .formValue input {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            height: 22px !important;
+            line-height: 22px !important;
+            font-size: 12px;
+        }
+
+.print-table table {
+    margin: 0px;
+    margin-top: 0px;
+    border-collapse: collapse;
+    width: 100%;
+    border-left: 1px solid;
+    text-align: center;
+}
+
+    .print-table table thead tr td {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-overflow: ellipsis;
+        word-break: keep-all;
+        overflow: hidden;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 12px;
+    }
+
+    .print-table table tbody tr td {
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+        height: 40px;
+        line-height: 25px;
+        word-break: break-all;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 12px;
+    }
+
+.icon {
+    background: url(../img/tabicons.png) no-repeat;
+    width: 18px;
+    line-height: 18px;
+    display: inline-block;
+}
+
+.icon-sys {
+    background-position: 0px -200px;
+}
+
+.icon-set {
+    background-position: -380px -200px;
+}
+
+.icon-add {
+    background-position: -20px 0px;
+}
+
+.icon-add1 {
+    background: url('icon/edit_add.png') no-repeat;
+}
+
+.icon-nav {
+    background-position: -100px -20px;
+}
+
+.icon-users {
+    background-position: -100px -480px;
+}
+
+.icon-role {
+    background-position: -360px -200px;
+}
+
+.icon-set {
+    background-position: -380px -200px;
+}
+
+.icon-log {
+    background-position: -380px -80px;
+}
+
+.icon-delete16 {
+    background: url('icon/delete.gif') no-repeat;
+    width: 18px;
+    line-height: 18px;
+    display: inline-block;
+}
+
+.icon-delete {
+    background-position: -140px -120px;
+}
+
+.icon-delete2 {
+    background-position: -340px -40px;
+}
+
+.icon-edit {
+    background-position: -380px -320px;
+}
+
+.icon-magic {
+    background-position: 0px -500px;
+}
+
+.icon-database {
+    background-position: -20px -140px;
+}
+
+.icon-expand {
+    background: url('/images/coll2.gif') no-repeat;
+}
+
+.icon-collapse {
+    background: url('/images/coll3.gif') no-repeat;
+}
+
+.icon-Distribution {
+    background-position: -0px -220px;
+}
+
+.icon-Pass {
+    background-position: -380px -220px;
+}
+
+.icon-Browse {
+    background-position: -60px -260px;
+}
+
+.icon-excel {
+    background-position: -260px -140px;
+}
+
+.icon-download {
+    background-position: -360px -300px;
+}
+
+.icon-print {
+    background-position: -240px -340px;
+}
+body {
+    overflow: auto;
+}
+
+/*span {
+    display: -moz-inline-box;
+    display: inline-block;
+    width: 600px;
+}*/
+
+.form-control {
+    width:100%;
+    border-top: transparent !important;
+    border-left: transparent !important;
+    border-right: transparent !important;
+    border-bottom: transparent !important;
+}

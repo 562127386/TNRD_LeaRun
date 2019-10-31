@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "设备税率变更日志";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">BindId</div>
+        <input id="BindId" type="text" class="form-control"  />
+    </div>
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">项目编码</div>
+        <input id="ProjectNo" type="text" class="form-control" readonly/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">项目名称</div>
+        <input id="ProjectName" type="text" class="form-control" readonly/>
+    </div>
+    <div class="col-xs-6 lr-form-item" >
+        <div class="lr-form-item-title">设备编码</div>
+        <input id="FacilityCode" type="text" class="form-control" readonly />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">设备名称</div>
+        <input id="FacilityName" type="text" class="form-control" readonly />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">数量</div>
+        <input id="Quantity" type="text" class="form-control" readonly/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">单位</div>
+        <input id="Unit" type="text" class="form-control"  readonly/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">变更前税率</div>
+        <input id="OldRate" type="text" class="form-control" readonly/>
+    </div>
+
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">出厂价格（元）</div>
+        <input id="Price" type="text" class="form-control"  readonly/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">每一品目出厂价</div>
+        <input id="TotalPrice" type="text" class="form-control"  readonly/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">每一目应缴税费</div>
+        <input id="TotalTax" type="text" class="form-control"  readonly/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">每一品目含税价</div>
+        <input id="TotalTaxPrice" type="text" class="form-control" readonly/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">变更后出厂价格</div>
+        <input id="TotalPriceNew" type="text" class="form-control"  />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">变更后应交税费</div>
+        <input id="TotalTaxNew" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">变更后含税价格</div>
+        <input id="TotalTaxPriceNew" type="text" class="form-control"  />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">变更后税率</div>
+        <input id="Rate" type="text" class="form-control" />
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_NE_Project/Views/FacilityRateLog/Form.js")

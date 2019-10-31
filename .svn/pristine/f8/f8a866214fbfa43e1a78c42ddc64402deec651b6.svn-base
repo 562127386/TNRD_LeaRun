@@ -1,0 +1,133 @@
+﻿/* * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)
+ * Copyright (c) 2013-2018 上海力软信息技术有限公司
+ * 创建人：超级管理员
+ * 日  期：2019-01-14 18:03
+ * 描  述：付款明细表
+ */
+var acceptClick;
+var keyValue = request('keyValue');
+var pactId = request('pactId');
+var bootstrap = function ($, learun) {
+    "use strict";
+    var $window = learun.frameTab.currentIframe().document.getElementById(pactId);
+    var selectedRow = $($window).jfGridGet('rowdata');
+    //var parentWindow = learun.frameTab.parentIframe().document.getElementById("gridtable");
+    //var selectedRow = $(parentWindow).jfGridGet('rowdata');
+    $('#PayType').lrDataItemSelect({
+        code: 'PayWay',
+        maxHeight: 230
+    });
+    var page = {
+        init: function () {
+            page.initData();
+            page.bind();
+        },
+        bind: function () {
+            $('#gridtable').jfGrid({
+                url: top.$.rootUrl + '/Wizsen_TNRD_Project/Wizsen_TNRD_Pact/GetPageList',
+                headData: [
+                    //{ label: "ID", name: "Id", width: 100, align: "left" },
+                    //{ label: "项目编码", name: "ProjectNo", width: 100, align: "left" },
+                    //{ label: "项目名称", name: "ProjectName", width: 100, align: "left" },
+                    { label: "合同编码", name: "Code", width: 100, align: "left" },
+                    //{ label: "合同名称", name: "Name", width: 100, align: "left" },
+                    //{ label: "乙方公司", name: "supplier", width: 150, align: "left" },
+                    //{ label: "合同金额", name: "Amount", width: 100, align: "left" },
+                    { label: "应付金额", name: "payableMoney", width: 100, align: "left" },
+                    { label: "已付金额", name: "paySumAmount", width: 100, align: "left" },
+                    { label: "未付金额", name: "overAmount", width: 100, align: "left" },
+                    //{ label: "结算金额", name: "Settlement", width: 100, align: "left" },
+                    //{
+                    //    label: "立项年份", name: "ProjectYear", width: 100, align: "left", formatter: function (value, row, index) {
+                    //        return $(this).formatterDate(value);
+                    //    } },
+                    //{ label: "合同金额", name: "Amount", width: 100, align: "left" },
+                    //{ label: "预算金额", name: "BudgetAmount", width: 100, align: "left" },
+                    //{ label: "入账金额", name: "BookedAmount", width: 100, align: "left" },
+                    { label: "挂账金额", name: "sumhangAmount", width: 100, align: "left" },
+                    //{ label: "转资", name: "TurnAmount", width: 100, align: "left" },
+                    //{ label: "比例", name: "Ratio", width: 100, align: "left" },
+                    //{
+                    //    label: "发生日期", name: "SignDate", width: 100, align: "left", formatter: function (value, row, index) {
+                    //        return $(this).formatterDate(value);
+                    //    } },
+                    //{ label: "发生期间", name: "SignTerm", width: 100, align: "left" },
+                    //{ label: "发生年份", name: "SignYear", width: 100, align: "left" },
+                    //{ label: "财务凭证", name: "Voucher", width: 100, align: "left" },
+                    //{ label: "付款类型", name: "PayType", width: 100, align: "left" },
+                    //{ label: "资金来源", name: "FundSource", width: 100, align: "left" },
+                    //{ label: "备注", name: "Remark", width: 100, align: "left" },
+                ],
+                mainId: 'Id',
+                isPage: true
+            });
+            var param2 = { Id: keyValue } || {};
+            $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param2) });
+        },
+        initData: function () {
+            if (!!selectedRow) {
+                //$('#form').lrSetFormData(selectedRow);
+                $('#PactCode').val(selectedRow.Code);
+                $('#PactName').val(selectedRow.Name);
+                $('#BindId').val(keyValue);
+                $('#PactType').val(selectedRow.contractType);
+                //$('#PaymentCompanyId').val(selectedRow.Package);
+                $('#PayCompany').val(selectedRow.supplier);
+            }
+        }
+    };
+    // 保存数据
+    acceptClick = function (callBack) {
+        var bookedAmount = parseFloat($('#bookedAmount').val());
+        var PayAmount = parseFloat($('#PayAmount').val());
+        var bookedAmount = parseFloat($('#bookedAmount').val());
+        var rowdatas = $('#gridtable').jfGridGet('rowdatas');
+        if (parseFloat(PayAmount) > parseFloat(rowdatas[0].overAmount)) {
+            learun.alert.error('表单信息输入有误,付款金额不能大于未付金额，请检查！');
+            return false;
+        }
+        if (bookedAmount == 0 && parseFloat(PayAmount) > parseFloat(rowdatas[0].sumhangAmount)) {
+            learun.alert.error('表单信息输入有误,付款金额不能大于挂账金额，请检查！');
+            return false;
+        }
+        var hangAmount = parseFloat($('#hangAmount').val());
+        if (bookedAmount != 0 && bookedAmount != PayAmount + hangAmount) {
+            learun.alert.error('表单信息输入有误,入账金额应等于付款金额与挂账金额之和，请检查！');
+            return false;
+        }
+        if (!$('#form').lrValidform()) {
+            return false;
+        }
+        var postData = $('#form').lrGetFormData();
+        postData.BindId = keyValue;
+        $.lrSaveForm(top.$.rootUrl + '/Wizsen_TNRD_Project/PayDatails/SaveForm', postData, function (res) {
+            // 保存成功后才回调
+            if (!!callBack) {
+                callBack();
+            }
+        });
+    };
+    page.init();
+}
+
+
+function onBooked() {
+    var bookedAmount = $('#bookedAmount').val();
+    if (bookedAmount == "0") {
+        $('#hangAmount').val("0");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

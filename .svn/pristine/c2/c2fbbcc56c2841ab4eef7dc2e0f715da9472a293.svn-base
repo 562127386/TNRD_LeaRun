@@ -1,0 +1,238 @@
+﻿using Learun.Util;
+using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+
+namespace Wizsen_TNRD_EnergyProject.Wizsen_TNRD_Project
+{
+    /// <summary> 
+    /// 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架 
+    /// Copyright (c) 2013-2018 上海力软信息技术有限公司 
+    /// 创 建：超级管理员 
+    /// 日 期：2019-02-26 17:56 
+    /// 描 述：项目管理 
+    /// </summary> 
+    public class ProjectDatailsBLL : ProjectDatailsIBLL
+    {
+        private ProjectDatailsService projectDatailsService = new ProjectDatailsService();
+
+        #region 获取数据 
+
+        /// <summary> 
+        /// 获取列表数据 
+        /// <summary> 
+        /// <returns></returns> 
+        public IEnumerable<TNRD_Project_DatailsEntity> GetList(string queryJson)
+        {
+            try
+            {
+                return projectDatailsService.GetList(queryJson);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 获取项目树形数据
+        /// </summary>
+        /// <returns></returns>
+        public List<TreeModel> GetProjectTree()
+        {
+            try
+            {
+                var ProjectList = projectDatailsService.GetList(null);
+                List<TreeModel> treeList_dept = new List<TreeModel>();
+                //获取项目所属部门，去除重复
+                Hashtable ht_dept = new Hashtable();
+                foreach (TNRD_Project_DatailsEntity item in ProjectList)
+                {
+                    if (!ht_dept.ContainsKey(item.Dept_Code))
+                    {
+                        ht_dept.Add(item.Dept_Code,item.Dept_Code);
+                        //根据部门获取年份
+                        List<TreeModel> tree_list_year = new List<TreeModel>();
+                        var yearList = ProjectList.ToList().Where(u => u.Dept_Code == item.Dept_Code);
+                        Hashtable ht_year = new Hashtable();
+                        foreach (var item_year in yearList)
+                        {
+                            var year_single = item_year.BeginTime.ToDate().Year;
+                            if (!ht_year.ContainsKey(year_single))
+                            {
+                                List<TreeModel> tree_list_item = new List<TreeModel>();
+                                ht_year.Add(year_single, year_single);
+                                TreeModel node_year = new TreeModel();
+                                node_year.id = year_single+"年".ToString();
+                                node_year.text = year_single + "年".ToString();
+                                node_year.value = year_single + "年".ToString();
+                                node_year.hasChildren = true;
+                                node_year.parentId= item.Dept_Code;
+                                node_year.complete = true;
+                                //根据年份获取项目
+                                var itemList = yearList.ToList().Where(u => u.BeginTime.Value.Year == year_single).ToList();
+                                Hashtable ht_item = new Hashtable();
+                                foreach (var item_project in itemList)
+                                {
+                                    if (!ht_item.ContainsKey(item_project.Code))
+                                    {
+                                        ht_item.Add(item_project.Code, item_project.Name);
+                                        TreeModel node_item = new TreeModel();
+                                        node_item.id = item_project.Code;
+                                        node_item.text = item_project.Name;
+                                        node_item.value = item_project.Name;
+                                        node_item.hasChildren = false;
+                                        node_item.parentId= year_single.ToString();
+                                        node_item.complete = true;
+                                        tree_list_item.Add(node_item);
+                                    }
+                                }
+                                node_year.ChildNodes = tree_list_item;
+                                tree_list_year.Add(node_year);
+                            }
+                        }
+                        TreeModel node_dept = new TreeModel();
+                        node_dept.id = item.Id;
+                        node_dept.parentId = "0";
+                        node_dept.text = item.Dept_Name;
+                        node_dept.value = item.Dept_Name;
+                        node_dept.hasChildren = true;
+                        node_dept.ChildNodes = tree_list_year;
+                        node_dept.complete = true;
+                        treeList_dept.Add(node_dept);
+                    }
+                }
+
+
+
+                return treeList_dept;
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
+
+        /// <summary> 
+        /// 获取列表分页数据 
+        /// <param name="pagination">分页参数</param> 
+        /// <summary> 
+        /// <returns></returns> 
+        public DataTable GetPageList(Pagination pagination, string queryJson)
+        {
+            try
+            {
+                return projectDatailsService.GetPageList(pagination, queryJson);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
+        /// <summary> 
+        /// 获取实体数据 
+        /// <param name="keyValue">主键</param> 
+        /// <summary> 
+        /// <returns></returns> 
+        public TNRD_Project_DatailsEntity GetEntity(string keyValue)
+        {
+            try
+            {
+                return projectDatailsService.GetEntity(keyValue);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
+        #endregion
+
+        #region 提交数据 
+
+        /// <summary> 
+        /// 删除实体数据 
+        /// <param name="keyValue">主键</param> 
+        /// <summary> 
+        /// <returns></returns> 
+        public void DeleteEntity(string keyValue)
+        {
+            try
+            {
+                projectDatailsService.DeleteEntity(keyValue);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
+        /// <summary> 
+        /// 保存实体数据（新增、修改） 
+        /// <param name="keyValue">主键</param> 
+        /// <summary> 
+        /// <returns></returns> 
+        public void SaveEntity(string keyValue, TNRD_Project_DatailsEntity entity)
+        {
+            try
+            {
+                projectDatailsService.SaveEntity(keyValue, entity);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
+
+
+        #endregion
+
+    }
+}

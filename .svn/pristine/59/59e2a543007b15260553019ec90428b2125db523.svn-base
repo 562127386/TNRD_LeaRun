@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "合同附件";
+    Layout = "~/Views/Shared/_Browse.cshtml";
+}
+@Html.AppendCssFile("/Areas/Wizsen_TNRD_Project/Views/Wizsen_TNRD_Pact/Browse.css")
+<script src="~/Content/bootstrap/bootstrap.min.js"></script>
+<div class="lr-layout">
+    <div class="lr-layout-wrap lr-form-wrap" style="padding-top:20px;">
+        <legend>
+            <div class="color"><span style="font-weight:bold;font-size:12px;border-left:5px solid #2D81DD">合同信息</span></div>
+        </legend>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">项目编码</div>
+            <input id="ProjectNo" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">项目名称</div>
+            <input id="ProjectName" type="text" class="form-control" style="background-color: #FFFFFF!important;" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同类型</div>
+            <input id="contractType" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同编码</div>
+            <input id="Code" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同名称</div>
+            <input id="Name" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">合同状态</div>
+            <input id="contractStatus" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">签订日期</div>
+            <input id="SignDate" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">乙方单位</div>
+            <input id="supplier" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Pact_Datails">
+            <div class="lr-form-item-title">备注</div>
+            <input id="Remark" type="text" class="form-control" style="background-color: #FFFFFF!important;"/>
+        </div>
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+
+            @*<ul role="presentation" class="active"><a href="#tab_linkman" data-toggle="tab">添加附件</a></ul>*@
+            <a id="lr_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;新增</a>
+            @*<a id="lr_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>*@
+            <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+            <!-- 1 -->
+            <div class="tab-pane fade in active" id="tab_linkman">
+                <div id="productgird"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/Wizsen_TNRD_Pact/PactAdjunctIndex.js")
+

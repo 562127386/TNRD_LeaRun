@@ -1,0 +1,357 @@
+﻿using Dapper;
+using Learun.DataBase.Repository;
+using Learun.Util;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Text;
+
+namespace Wizsen_TNRD_EnergyProject.Wizsen_TNRD_Project
+{
+    /// <summary>
+    /// 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架
+    /// Copyright (c) 2013-2018 上海力软信息技术有限公司
+    /// 创 建：超级管理员
+    /// 日 期：2019-02-25 14:30
+    /// 描 述：Wizsen_TNRD_Pact
+    /// </summary>
+    public class Wizsen_TNRD_PactService : RepositoryFactory
+    {
+        #region 获取数据
+
+        /// <summary>
+        /// 获取页面显示列表数据
+        /// <summary>
+        /// <param name="queryJson">查询参数</param>
+        /// <returns></returns>
+        public DataTable GetPageList(Pagination pagination, string queryJson)
+        {
+            try
+            {
+                var strSql = new StringBuilder();
+                strSql.Append("SELECT ");
+                strSql.Append(@"
+               t.*
+                ");
+                strSql.Append("  FROM View_TNRD_Pact t ");
+                strSql.Append("  WHERE 1=1 ");
+                var queryParam = queryJson.ToJObject();
+                // 虚拟参数
+                var dp = new DynamicParameters(new { });
+                //if (!queryParam["StartTime"].IsEmpty() && !queryParam["EndTime"].IsEmpty())
+                //{
+                //    dp.Add("startTime", queryParam["StartTime"].ToDate(), DbType.DateTime);
+                //    dp.Add("endTime", queryParam["EndTime"].ToDate(), DbType.DateTime);
+                //    strSql.Append(" AND ( t.Date >= @startTime AND t.Date <= @endTime ) ");
+                //}
+                if (!queryParam["Date"].IsEmpty() && !queryParam["Date"].IsEmpty())
+                {
+                    dp.Add("Date", "%" + queryParam["Date"].ToString().Trim() + "%", DbType.String);
+                    strSql.Append(" AND ( t.Date Like @Date ) ");
+                }
+                //树形结构参数
+                if (!queryParam["Orgin"].IsEmpty())
+                {
+                    dp.Add("Orgin", "%" + queryParam["Orgin"].ToString().Trim() + "%", DbType.String);
+                    strSql.Append(" AND ( t.Dept_Name Like @Orgin ) ");
+                }
+                if (!queryParam["ProjectNo"].IsEmpty())
+                {
+                    dp.Add("ProjectNo", queryParam["ProjectNo"].ToString(), DbType.String);
+                    strSql.Append(" AND t.ProjectNo Like @ProjectNo ");
+                }
+                if (!queryParam["pactName"].IsEmpty())
+                {
+                    dp.Add("pactName", "%" + queryParam["pactName"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.Name Like @pactName ");
+                }
+                if (!queryParam["pactCode"].IsEmpty())
+                {
+                    dp.Add("pactCode", "%" + queryParam["pactCode"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.Code Like @pactCode ");
+                }
+                if (!queryParam["supplier"].IsEmpty())
+                {
+                    dp.Add("supplier", "%" + queryParam["supplier"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.supplier Like @supplier ");
+                }
+                if (!queryParam["contractType"].IsEmpty())
+                {
+                    dp.Add("contractType", "%" + queryParam["contractType"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.contractType Like @contractType ");
+                }
+                if (!queryParam["ProjectName"].IsEmpty())
+                {
+                    dp.Add("ProjectName", "%" + queryParam["ProjectName"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.ProjectName Like @ProjectName ");
+                }
+                if (!queryParam["Name"].IsEmpty())
+                {
+                    dp.Add("Name", "%" + queryParam["Name"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.Name Like @Name ");
+                }
+                if (!queryParam["Id"].IsEmpty())
+                {
+                    dp.Add("Id", "%" + queryParam["Id"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.Id Like @Id ");
+                }
+                if (!queryParam["isCheck"].IsEmpty())
+                {
+                    strSql.Append(" and exists(select 1 from TNRD_Facility_Base where BindId=t.Id)");
+                }
+                return this.BaseRepository().FindTable(strSql.ToString(), dp, pagination);
+                //return this.BaseRepository().FindList<TNRD_Pact_DatailsEntity>(strSql.ToString(), dp, pagination);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        public DataTable GetList(string queryJson)
+        {
+            try
+            {
+                var strSql = new StringBuilder();
+                strSql.Append("SELECT ");
+                strSql.Append(@"
+                t.*
+                ");
+                strSql.Append("  FROM View_TNRD_Pact t ");
+                strSql.Append("  WHERE 1=1 ");
+                var queryParam = queryJson.ToJObject();
+                // 虚拟参数
+                var dp = new DynamicParameters(new { });
+                //if (!queryParam["StartTime"].IsEmpty() && !queryParam["EndTime"].IsEmpty())
+                //{
+                //    dp.Add("startTime", queryParam["StartTime"].ToDate(), DbType.DateTime);
+                //    dp.Add("endTime", queryParam["EndTime"].ToDate(), DbType.DateTime);
+                //    strSql.Append(" AND ( t.Date >= @startTime AND t.Date <= @endTime ) ");
+                //}
+                if (!queryParam["ProjectNo"].IsEmpty())
+                {
+                    dp.Add("ProjectNo", "%" + queryParam["ProjectNo"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.ProjectNo Like @ProjectNo ");
+                }
+                if (!queryParam["Name"].IsEmpty())
+                {
+                    dp.Add("ProjectName", "%" + queryParam["ProjectName"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.ProjectName Like @ProjectName ");
+                }
+                if (!queryParam["Id"].IsEmpty())
+                {
+                    dp.Add("Id", "%" + queryParam["Id"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.Id Like @Id ");
+                }
+                return this.BaseRepository().FindTable(strSql.ToString(), dp);
+                //return this.BaseRepository().FindList<TNRD_Pact_DatailsEntity>(strSql.ToString(), dp);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        /// <summary> 
+        /// 获取树形列表数据 
+        /// <summary> 
+        /// <returns></returns> 
+        public IEnumerable<TNRD_Pact_DatailsEntity> GetProjectTree(string queryJson)
+        {
+            try
+            {
+                //参考写法 
+                //var queryParam = queryJson.ToJObject(); 
+                // 虚拟参数 
+                //var dp = new DynamicParameters(new { }); 
+                //dp.Add("startTime", queryParam["StartTime"].ToDate(), DbType.DateTime); 
+                var strSql = new StringBuilder();
+                strSql.Append("SELECT * ");
+                //strSql.Append(fieldSql);
+                strSql.Append(" FROM View_Project_tree t ");
+                return this.BaseRepository().FindList<TNRD_Pact_DatailsEntity>(strSql.ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+        /// <summary>
+        /// 获取TNRD_Facility_Base表数据
+        /// <summary>
+        /// <returns></returns>
+        public IEnumerable<TNRD_Facility_BaseEntity> GetTNRD_Facility_BaseList(string keyValue)
+        {
+            try
+            {
+                return this.BaseRepository().FindList<TNRD_Facility_BaseEntity>(t => t.BindId == keyValue);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 获取TNRD_Pact_Datails表实体数据
+        /// <param name="keyValue">主键</param>
+        /// <summary>
+        /// <returns></returns>
+        public TNRD_Pact_DatailsEntity GetTNRD_Pact_DatailsEntity(string keyValue)
+        {
+            try
+            {
+                return this.BaseRepository().FindEntity<TNRD_Pact_DatailsEntity>(keyValue);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 获取TNRD_Facility_Base表实体数据
+        /// <param name="keyValue">主键</param>
+        /// <summary>
+        /// <returns></returns>
+        public TNRD_Facility_BaseEntity GetTNRD_Facility_BaseEntity(string keyValue)
+        {
+            try
+            {
+                return this.BaseRepository().FindEntity<TNRD_Facility_BaseEntity>(t => t.BindId == keyValue);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        #endregion
+
+        #region 提交数据
+
+        /// <summary>
+        /// 删除实体数据
+        /// <param name="keyValue">主键</param>
+        /// <summary>
+        /// <returns></returns>
+        public void DeleteEntity(string keyValue)
+        {
+            var db = this.BaseRepository().BeginTrans();
+            try
+            {
+                var tNRD_Pact_DatailsEntity = GetTNRD_Pact_DatailsEntity(keyValue);
+                db.Delete<TNRD_Pact_DatailsEntity>(t => t.Id == keyValue);
+                db.Delete<TNRD_Facility_BaseEntity>(t => t.BindId == tNRD_Pact_DatailsEntity.Id);
+                db.Commit();
+            }
+            catch (Exception ex)
+            {
+                db.Rollback();
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 保存实体数据（新增、修改）
+        /// <param name="keyValue">主键</param>
+        /// <summary>
+        /// <returns></returns>
+        public void SaveEntity(string keyValue, TNRD_Pact_DatailsEntity entity)
+        {
+            var db = this.BaseRepository().BeginTrans();
+            try
+            {
+                if (!string.IsNullOrEmpty(keyValue))
+                {
+                    var tNRD_Pact_DatailsEntityTmp = GetTNRD_Pact_DatailsEntity(keyValue);
+                    entity.Modify(keyValue);
+                    db.Update(entity);
+                    db.Delete<TNRD_Facility_BaseEntity>(t => t.BindId == tNRD_Pact_DatailsEntityTmp.Id);
+                    //foreach (TNRD_Facility_BaseEntity item in tNRD_Facility_BaseList)
+                    //{
+                    //    item.Create();
+                    //    item.BindId = tNRD_Pact_DatailsEntityTmp.Id;
+                    //    db.Insert(item);
+                    //}
+                }
+                else
+                {
+                    entity.Create();
+                    db.Insert(entity);
+                    //foreach (TNRD_Facility_BaseEntity item in tNRD_Facility_BaseList)
+                    //{
+                    //    item.Create();
+                    //    item.BindId = entity.Id;
+                    //    db.Insert(item);
+                    //}
+                }
+                db.Commit();
+            }
+            catch (Exception ex)
+            {
+                db.Rollback();
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+}

@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "采购合同";
+    Layout = "~/Views/Shared/_Form2.cshtml";
+}
+<div class="lr-layout"  style="padding:8px;">
+    <div class="lr-form-wrap lr-layout-wrap"  style="padding-top:5px;">
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">合同类型<font face="宋体">*</font></div>
+            <div id="Type" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">合同编码<font face="宋体">*</font></div>
+            <input id="Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">合同名称<font face="宋体">*</font></div>
+            <input id="Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">合同状态<font face="宋体">*</font></div>
+            <div id="State" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">设备包<font face="宋体">*</font></div>
+            <div id="Package" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">供应商<font face="宋体">*</font></div>
+            <input id="Supplier" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">采购组织<font face="宋体">*</font></div>
+            <input id="Organiz" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">部门<font face="宋体">*</font></div>
+            <input id="Department" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">人员<font face="宋体">*</font></div>
+            <input id="Personnel" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">合同金额<font face="宋体">*</font></div>
+            <input id="Amount" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">币种<font face="宋体">*</font></div>
+            <input id="Currency" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">预付款<font face="宋体">*</font></div>
+            <input id="AdvancePay" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">预付款限额<font face="宋体">*</font></div>
+            <input id="Limit" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">合同签订日期<font face="宋体">*</font></div>
+            <input id="SigningDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#SigningDate').trigger('change'); } })"  />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">计划终止日期<font face="宋体">*</font></div>
+            <input id="EndTime" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#EndTime').trigger('change'); } })"  />
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="XM_Pact_Purchase">
+            <div class="lr-form-item-title">交货地点</div>
+            <input id="Place" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+            <div id="XM_Facility_Base"></div>
+        </div>
+    </div>
+</div>
+    @Html.AppendJsFile("/Areas/Wizsen_NE_Project/Views/PactPurchase/Form.js")
+
+
+<style>
+    .lr-layout {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        //padding:15px;
+    }
+
+    .lr-scroll-wrap {
+        overflow: scroll;
+    }
+
+    .lr-layout-wrap {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid rgb(204, 204, 204);
+        box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+    }
+</style>

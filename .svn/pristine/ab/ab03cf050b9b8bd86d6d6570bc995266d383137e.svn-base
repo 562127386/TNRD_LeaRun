@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "资金下达";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+	<div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">BindId<font face="宋体">*</font></div>
+        <input id="BindId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">项目编码<font face="宋体">*</font></div>
+        <input id="Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">项目名称<font face="宋体">*</font></div>
+        <div id="Name" class="form-control" isvalid="yes" checkexpession="NotNull" /></div>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">下达年份<font face="宋体">*</font></div>
+        <input id="IssuedYear" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">局下达文号<font face="宋体">*</font></div>
+        <input id="BureauTitanict" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+	<div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">财政下达文号<font face="宋体">*</font></div>
+        <input id="FiscalTitanict" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+	<div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">局下达日期</div>
+        <input id="BureauDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})"/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">财政下达日期</div>
+        <input id="FiscalDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})" />
+    </div>
+	<div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">局下达(万元)<font face="宋体">*</font></div>
+        <input id="BureauFunds" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">财政下达(万元)<font face="宋体">*</font></div>
+        <input id="FiscalFunds" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item" data-table="TNRD_Project_Capital">
+		<div class="lr-form-item-title">是否完工<font face="宋体">*</font></div> 
+        <div id="IsComplete" ></div> 
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/ProjectCapital/Form.js")

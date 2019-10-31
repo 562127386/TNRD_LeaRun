@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "项目管理";
+    Layout = "~/Views/Shared/_Form2.cshtml";
+}
+<div class="lr-layout" style="padding:8px;">
+    <div class="lr-form-wrap lr-layout-wrap" id="form" style="padding-top:10px;">
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails" hidden>
+            <div class="lr-form-item-title">主键<font face="宋体">*</font></div>
+            <input id="Id" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails" hidden>
+            <div class="lr-form-item-title">BindId<font face="宋体">*</font></div>
+            <input id="BindId" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">编码<font face="宋体">*</font></div>
+            <input id="Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">名称<font face="宋体">*</font></div>
+            <input id="Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails" hidden>
+            <div class="lr-form-item-title">主项目编码<font face="宋体">*</font></div>
+            <input id="BaseCode" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">主项目名称<font face="宋体">*</font></div>
+            <input id="BaseName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails" hidden>
+            <div class="lr-form-item-title">子项目编码<font face="宋体">*</font></div>
+            <input id="BaseSubCode" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">子项目名称<font face="宋体">*</font></div>
+            <div id="BaseSubName" class="form-control" isvalid="yes" checkexpession="NotNull">
+            </div>
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">开始时间<font face="宋体">*</font></div>
+            <input id="BeginDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">结束时间<font face="宋体">*</font></div>
+            <input id="EndDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails" hidden>
+            <div class="lr-form-item-title">所属公司Id<font face="宋体">*</font></div>
+            <input id="CompanyId" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">所属公司<font face="宋体">*</font></div>
+            <div id="CompanyName" class="form-control" isvalid="yes" checkexpession="NotNull">
+            </div>
+        </div>
+        @*<div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-title">项目状态<font face="宋体">*</font></div>
+            <div id="ProjectState" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+        </div>*@
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title ">项目节点<font face="宋体">*</font></div>
+            <div id="Node" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        @*<div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">资金来源<font face="宋体">*</font></div>
+            <div id="CapitalSource" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+        </div>*@
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">财政配套资金(元)</div>
+            <div id="FiscalCapital" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">已到位额度(元)</div>
+            <div id="ArriveCapital" class="form-control" >
+            </div>
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">项目审计年份</div>
+            <div id="AuditYear" class="form-control" >
+            </div>
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">设备包</div>
+            <div id="Package" class="form-control" >
+            </div>
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">项目负责人</div>
+            <input id="Principal" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-title">项目负责人电话</div>
+            <input id="Phone" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">施工单位</div>
+            <input id="ConstructionUnit" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">施工单位负责人</div>
+            <input id="CPrincipal" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">施工单位电话</div>
+            <input id="CPhone" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">项目描述</div>
+            <input id="DEC" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="XM_Project_Datails">
+            <div class="lr-form-item-title">备注</div>
+            <input id="Remark" type="text" class="form-control" />
+        </div>
+        @*<div class="col-xs-12 lr-form-item lr-form-item-grid">
+            <div id="XM_Project_Details_Estimate"></div>
+        </div>*@
+    </div>
+
+</div>
+    @Html.AppendJsFile("/Areas/Wizsen_NE_Project/Views/ProjectDatails/Form.js")
+<style>
+    .lr-layout {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        //padding:15px;
+    }
+
+    .lr-layout-wrap {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid rgb(204, 204, 204);
+        box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+    }
+</style>

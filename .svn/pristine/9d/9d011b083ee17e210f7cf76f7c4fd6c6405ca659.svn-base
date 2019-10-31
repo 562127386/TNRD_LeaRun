@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "资金下达";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div class="lr-layout lr-layout-center" id="lr_layout">
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap">
+            <div >
+                <div class="lr-layout-tool-left">
+					<div class="lr-layout-tool-item">
+                        <span class="btn btn-sm" >&nbsp;下达年份:</span>
+                    </div>
+					<div class="lr-layout-tool-item">
+                        <input id="IssuedYear" type="text" class="form-control" placeholder="下达年份" style = "width:160px"/>
+                    </div>
+					<div class="lr-layout-tool-item">
+                        <span class="btn btn-sm">&nbsp;局下达时间:</span>
+                    </div>
+					<div class="lr-layout-tool-item">
+                        <div id="BureauDate" style = "width:160px"></div> 
+                    </div>
+					<div class="lr-layout-tool-item">
+                        <span class="btn btn-sm">&nbsp;财政下达时间:</span>
+                    </div>
+					<div class="lr-layout-tool-item">
+                        <div id="FiscalDate" style = "width:160px"></div> 
+                    </div>
+					<div class="lr-layout-tool-item">
+                        <span class="btn btn-sm">&nbsp;项目名称:</span>
+                    </div>
+					<div class="lr-layout-tool-item">
+                        <input id="Name" type="text" class="form-control" placeholder="项目名称" style = "width:160px"/>
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;查询</a>
+                    </div>
+                </div>
+			</div>
+            <div class="lr-layout-tool">
+                <div class="lr-layout-tool-right" style="padding-top: 18px;">
+                    <div class=" btn-group btn-group-sm">
+                        <a id="lr_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                    </div>
+                    <div class=" btn-group btn-group-sm" learun-authorize="yes">
+                        <a id="lr_add"   class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                        <a id="lr_edit"  class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+                        <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                    </div>
+                </div>
+            </div>
+            <div class="lr-layout-body" id="gridtable"></div>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/ProjectCapital/Index.js")

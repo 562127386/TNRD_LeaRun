@@ -1,0 +1,17 @@
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\Learun.Cache.Redis.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\Learun.Cache.Redis.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\Learun.Cache.Base.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\ServiceStack.Common.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\ServiceStack.Interfaces.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\ServiceStack.Redis.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\ServiceStack.Text.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\Learun.Cache.Base.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\ServiceStack.Common.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\ServiceStack.Interfaces.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\ServiceStack.Redis.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\bin\Debug\ServiceStack.Text.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\obj\Debug\Learun.Cache.Redis.csprojAssemblyReference.cache
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\obj\Debug\Learun.Cache.Redis.csproj.CoreCompileInputs.cache
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\obj\Debug\Learun.Cache.Redis.csproj.CopyComplete
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\obj\Debug\Learun.Cache.Redis.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Redis\obj\Debug\Learun.Cache.Redis.pdb

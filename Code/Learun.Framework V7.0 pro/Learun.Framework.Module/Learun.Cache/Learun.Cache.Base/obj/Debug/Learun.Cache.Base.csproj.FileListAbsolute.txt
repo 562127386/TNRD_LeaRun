@@ -1,0 +1,5 @@
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Base\bin\Debug\Learun.Cache.Base.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Base\bin\Debug\Learun.Cache.Base.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Base\obj\Debug\Learun.Cache.Base.csproj.CoreCompileInputs.cache
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Base\obj\Debug\Learun.Cache.Base.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Cache\Learun.Cache.Base\obj\Debug\Learun.Cache.Base.pdb

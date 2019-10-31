@@ -1,0 +1,182 @@
+﻿/* * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)
+ * Copyright (c) 2013-2018 上海力软信息技术有限公司
+ * 创建人：超级管理员
+ * 日  期：2019-02-23 17:26
+ * 描  述：项目管理
+ */
+var acceptClick;
+var keyValue = request('keyValue');
+var bootstrap = function ($, learun) {
+    "use strict";
+    var selectedRow = learun.frameTab.currentIframe().selectedRow;
+    $('#CapitalSource').lrDataItemSelect({
+        code: 'ProjectCapitalSource',
+        maxHeight: 230
+    });
+    $('#Node').lrDataItemSelect({
+        code: 'ProjectType2',
+        maxHeight: 230
+    });
+    var page = {
+        init: function () {
+            $('.lr-form-wrap').lrscroll();
+            page.bind();
+            page.initData();
+        },
+        bind: function () {
+            //年范围
+            laydate.render({
+                elem: '#ImplementYear'
+                , type: 'year'
+                 , range: true
+            });
+            //$('#TNRD_Project_Estimate').jfGrid({
+            //    headData: [
+            //        {
+            //            label: '数据来源', name: 'DataSource', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'select',
+            //                datatype: 'dataItem',
+            //                code: 'DataSource'
+            //            }
+            //        },
+            //        {
+            //            label: '工程费', name: 'ProjectFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '前期费', name: 'AgoFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '勘察费', name: 'ProspectFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '设计费', name: 'DesignFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '监理费', name: 'ControlFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '环评费', name: 'EnvironmentFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '安评费', name: 'SafetyFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '扬尘防治增加费', name: 'DustFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '劳动卫生评价费', name: 'HealthFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '预备费', name: 'ReadyFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '掘路费', name: 'DiggingFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '管理费', name: 'ManageFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        },
+            //        {
+            //            label: '其他费用', name: 'OtherFee', width: 100, align: 'left'
+            //            , edit: {
+            //                type: 'input'
+            //            }
+            //        }
+            //    ],
+            //    isEdit: true,
+            //    height: 120
+            //});
+        },
+        initData: function () {
+            if (!!keyValue) {
+                $.lrSetForm(top.$.rootUrl + '/Wizsen_TNRD_Project/ProjectDatails/GetFormData?keyValue=' + keyValue, function (data) {
+                    $('[data-table="TNRD_Project_Datails"]').lrSetFormData(data);
+                });
+            }
+            //if (!!selectedRow) {
+            //    $('#form').lrSetFormData(selectedRow);
+            //}
+        },
+    };
+
+
+    // 保存数据
+    $('#lr_submit').on('click', function () {
+        acceptClick();
+        //learun.frameTab.close(learun.frameTab.iframeId);
+    });
+
+    // 关闭
+    $('#lr_close').on('click', function () {
+        //acceptClick(1);
+        learun.frameTab.close(learun.frameTab.iframeId);
+    });
+
+    // 保存数据
+    //acceptClick = function () {
+    //    if (!$('body').lrValidform()) {
+    //        return false;
+    //    }
+    //    var postData = {};
+    //    postData.strEntity = JSON.stringify($('[data-table="TNRD_Project_Datails"]').lrGetFormData());
+    //    postData.strtNRD_Project_EstimateEntity = JSON.stringify($('[data-table="TNRD_Project_Estimate"]').lrGetFormData());
+    //    $.lrSaveForm(top.$.rootUrl + '/Wizsen_TNRD_Project/ProjectDatails/SaveForm?keyValue=' + keyValue, postData, function (res) {
+    //        learun.frameTab.closeRefreshTab();
+    //        // 保存成功后才回调
+    //        //if (!!callBack) {
+    //        //    callBack();
+    //        //}
+    //    });
+    //};
+    // 保存数据
+    acceptClick = function () {
+        if (!$('body').lrValidform()) {
+            return false;
+        }
+        var postData = $('[data-table="TNRD_Project_Datails"]').lrGetFormData();
+        $.lrSaveForm(top.$.rootUrl + '/Wizsen_TNRD_Project/ProjectDatails/SaveForm?keyValue=' + keyValue, postData, function (res) {
+            learun.frameTab.closeRefreshTab();
+            // 保存成功后才回调
+            //if (!!callBack) {
+            //    callBack();
+            //}
+        });
+    };
+    page.init();
+}

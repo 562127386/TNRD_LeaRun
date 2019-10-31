@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "合同附件";
+    Layout = "~/Views/Shared/_Browse.cshtml";
+}
+@Html.AppendCssFile("/Areas/Wizsen_TNRD_Project/Views/Wizsen_TNRD_Pact/Browse.css")
+<script src="~/Content/bootstrap/bootstrap.min.js"></script>
+<div class="lr-layout">
+    <div class="lr-layout-wrap lr-form-wrap" style="padding-top:20px;">
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">项目编码<font face="宋体">*</font></div>
+            <input id="ProjectNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">项目名称<font face="宋体">*</font></div>
+            <input id="ProjectName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">合同编码<font face="宋体">*</font></div>
+            <input id="PactNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">合同名称<font face="宋体">*</font></div>
+            <input id="PactName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">设备分类<font face="宋体">*</font></div>
+            <input id="Classify" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">设备编码<font face="宋体">*</font></div>
+            <input id="Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">设备名称<font face="宋体">*</font></div>
+            <input id="Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">规格及型号<font face="宋体">*</font></div>
+            <input id="Model" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">数量<font face="宋体">*</font></div>
+            <input id="Quantity" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">单位<font face="宋体">*</font></div>
+            <input id="Unit" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">税率（%）<font face="宋体">*</font></div>
+            <input id="Rate" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">出厂单格（元）<font face="宋体">*</font></div>
+            <input id="Price" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">每一品目的出厂价<font face="宋体">*</font></div>
+            <input id="TotalPrice" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">税额（元）<font face="宋体">*</font></div>
+            <input id="Tax" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">每一目应缴税费<font face="宋体">*</font></div>
+            <input id="TotalTax" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">含税单价（元）<font face="宋体">*</font></div>
+            <input id="TaxPrice" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">每一品目的含税价格<font face="宋体">*</font></div>
+            <input id="TotalTaxPrice" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">设备状态<font face="宋体">*</font></div>
+            <input id="EquipmentState" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">收货单位<font face="宋体">*</font></div>
+            <input id="ReceivingUnit" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">收货地址<font face="宋体">*</font></div>
+            <input id="ShippingAddress" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">货物描述<font face="宋体">*</font></div>
+            <input id="Description" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">财务组织<font face="宋体">*</font></div>
+            <input id="Financial" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">厂家<font face="宋体">*</font></div>
+            <input id="Customer" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">备注<font face="宋体">*</font></div>
+            <input id="Remark" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">支付数量<font face="宋体">*</font></div>
+            <input id="PayQuantity" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">入库时间<font face="宋体">*</font></div>
+            <input id="StorageTime" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="TNRD_Facility_Base">
+            <div class="lr-form-item-title">出库时间<font face="宋体">*</font></div>
+            <input id="OutboundTime" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+
+            @*<ul role="presentation" class="active"><a href="#tab_linkman" data-toggle="tab">添加附件</a></ul>*@
+            <a id="lr_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;新增</a>
+            <a id="lr_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+            <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+            <!-- 1 -->
+            <div class="tab-pane fade in active" id="tab_linkman">
+                <div id="productgird"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/FacilityBase/FacilityAdjunctIndex.js")
+

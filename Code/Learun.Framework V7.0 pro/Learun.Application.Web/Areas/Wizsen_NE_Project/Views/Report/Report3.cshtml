@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "履约保函";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                新增报表1
+            </div>
+            @*<div class="print-info">
+                    <table class="form">
+                        <tr>
+                            <th class="formTitle" style="">设备名称：</th>
+                            <td class="formValue" style="">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务单号：</th>
+                            <td class="formValue">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>*@
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+
+                        <tr>
+                            <td style="width: 50px;">项目名称</td>
+                            <td style="width: 120px;">总投资（文）</td>
+                            <td style="width: 120px;">余额-总</td>
+                            <td style="width: 120px;">总投资</td>
+                            <td style="width: 120px;">工程费</td>
+                            <td style="width: 120px; ">合同值</td>
+                            <td style="width: 120px; ">原报值</td>
+                            <td style="width: 120px;">审定值</td>
+                            <td style="width: 120px;">前期费</td>
+                            <td style="width: 120px;">交易服务号</td>
+                            <td style="width: 120px;">招标代理费</td>
+                            <td style="width: 120px;">造价咨询费</td>
+                            <td style="width: 120px;">施工图</td>
+                        </tr>
+
+                        @{
+
+                            for (int i = 0; i < @ViewBag.model.Count; i++)
+                            {
+                            <tr>
+                                <td>@ViewBag.model[i].Name</td>
+                                <td>@ViewBag.model[i].AmountFee</td>
+                                <td></td>
+                                <td>@ViewBag.model[i].AmountFee</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>@ViewBag.model[i].DealFee</td>
+                                <td>@ViewBag.model[i].DealFee</td>
+                                <td>@ViewBag.model[i].TenderFee</td>
+                                <td>@ViewBag.model[i].CostFee</td>
+                                <td>@ViewBag.model[i].WorkMapFee</td>
+                            </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+
+                        @*
+                            <th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>

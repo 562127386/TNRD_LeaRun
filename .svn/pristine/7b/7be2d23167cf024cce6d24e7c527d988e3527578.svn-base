@@ -1,0 +1,536 @@
+﻿using Learun.Util;
+using Learun.Util.Operat;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+namespace Wizsen_TNRD_EnergyProject.Wizsen_TNRD_Project
+
+{
+    /// <summary> 
+    /// 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架 
+    /// Copyright (c) 2013-2018 上海力软信息技术有限公司 
+    /// 创 建：超级管理员 
+    /// 日 期：2019-02-26 17:56 
+    /// 描 述：项目管理 
+    /// </summary> 
+    public class TNRD_Project_DatailsEntity
+    {
+        #region 实体成员 
+        /// <summary> 
+        /// Id 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("ID")]
+        public string Id { get; set; }
+        /// <summary> 
+        /// BindId 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("BINDID")]
+        public string BindId { get; set; }
+        /// <summary> 
+        /// 项目编码 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("CODE")]
+        public string Code { get; set; }
+        /// <summary> 
+        /// 项目名称 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("NAME")]
+        public string Name { get; set; }
+
+
+
+        /// <summary> 
+        /// 立项时间 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("YEAR")]
+        public decimal? Year { get; set; }
+        /// <summary> 
+        /// 建设单位 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("COMPANY")]
+        public string Company { get; set; }
+        /// <summary> 
+        /// 开发商 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("DEVELOPERS")]
+        public string Developers { get; set; }
+        /// <summary> 
+        /// 项目性质
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("NATURE")]
+        public string Nature { get; set; }
+        /// <summary> 
+        /// 项目开始时间
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("BEGINTIME")]
+        public DateTime? BeginTime { get; set; }
+        /// <summary> 
+        /// 项目性质
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("ENDTIME")]
+        public string EndTime { get; set; }
+        /// <summary> 
+        /// 项目负责人
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("PRINCIPAL")]
+        public string Principal { get; set; }
+        /// <summary> 
+        /// 负责人联系电话
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("PHONE")]
+        public string Phone { get; set; }
+        /// <summary> 
+        /// 地址 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("ADDRESS")]
+        public string Address { get; set; }
+
+        public string Dept_Code { get; set; }
+
+        public string Dept_Name { get; set; }
+        /// <summary> 
+        /// 内部工号 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("WORKNO")]
+        public string WorkNo { get; set; }
+        /// <summary> 
+        /// 总建筑面积 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("COVEREDAREA")]
+        public decimal? CoveredArea { get; set; }
+
+        /// <summary> 
+        /// 供热面积
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("HEATINGAREA")]
+        public decimal? HeatingArea { get; set; }
+
+        /// <summary> 
+        /// 户数 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("HOUSEHOLDS")]
+        public string Households { get; set; }
+
+        /// <summary> 
+        /// 管网长度
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("PIPELENGTH")]
+        public decimal? PipeLength { get; set; }
+        /// <summary> 
+        /// 实施年份 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("IMPLEMENTYEAR")]
+        public string ImplementYear { get; set; }
+        /// <summary> 
+        /// 总投资 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("AMOUNT")]
+        public decimal? Amount { get; set; }
+        /// <summary> 
+        /// 概算 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("ESTIMATE")]
+        public decimal? Estimate { get; set; }
+
+        /// <summary> 
+        /// 立项文号 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("TITANICT")]
+        public string Titanict { get; set; }
+
+        /// <summary> 
+        /// 立项时间 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("DATE")]
+        public DateTime? Date { get; set; }
+
+        /// <summary> 
+        /// 立项总投资(万元)
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("PROJECTINVEST")]
+        public decimal? ProjectInvest { get; set; }
+
+        /// <summary> 
+        /// 投资批复时间 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("APPROVALTIME")]
+        public DateTime? ApprovalTime { get; set; }
+        /// <summary> 
+        /// 决算时间 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("FINALTIME")]
+        public DateTime? FinalTime { get; set; }
+        /// <summary> 
+        /// 是否属于配套 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("ISMATING")]
+        public string IsMating { get; set; }
+        /// <summary> 
+        /// 批复文号 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("APPROVALTITANICT")]
+        public string ApprovalTitanict { get; set; }
+        /// <summary> 
+        /// 预算评审值 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REVIEW")]
+        public decimal? Review { get; set; }
+        /// <summary> 
+        /// 批复决算文号 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("APPROVALFINAL")]
+        public string ApprovalFinal { get; set; }
+        /// <summary> 
+        /// 决算值 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("FINALVALUE")]
+        public decimal? FinalValue { get; set; }
+        /// <summary> 
+        /// 备注 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK")]
+        public string Remark { get; set; }
+        /// <summary> 
+        /// 资金来源 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("CAPITALSOURCE")]
+        public string CapitalSource { get; set; }
+        /// <summary> 
+        /// 项目节点 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("NODE")]
+        public string Node { get; set; }
+        /// <summary> 
+        /// 创建日期 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("CREATEDATE")]
+        public DateTime? CreateDate { get; set; }
+        /// <summary> 
+        /// 创建人Id 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("CREATEUSERID")]
+        public string CreateUserId { get; set; }
+        /// <summary> 
+        /// 创建人 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("CREATEUSERNAME")]
+        public string CreateUserName { get; set; }
+        /// <summary> 
+        /// 修改日期 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("UPDATEDATE")]
+        public DateTime? UpdateDate { get; set; }
+        /// <summary> 
+        /// 修改人ID 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("UPDATEUSERID")]
+        public string UpdateUserId { get; set; }
+        /// <summary> 
+        /// 修改人 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("UPDATEUSERNAME")]
+        public string UpdateUserName { get; set; }
+        /// <summary> 
+        /// Remark1 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK1")]
+        public string Remark1 { get; set; }
+        /// <summary> 
+        /// Remark2 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK2")]
+        public string Remark2 { get; set; }
+        /// <summary> 
+        /// Remark3 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK3")]
+        public string Remark3 { get; set; }
+        /// <summary> 
+        /// Remark4 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK4")]
+        public string Remark4 { get; set; }
+        /// <summary> 
+        /// Remark5 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK5")]
+        public string Remark5 { get; set; }
+        /// <summary> 
+        /// Remark6 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK6")]
+        public string Remark6 { get; set; }
+        /// <summary> 
+        /// Remark7 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK7")]
+        public string Remark7 { get; set; }
+        /// <summary> 
+        /// Remark8 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK8")]
+        public string Remark8 { get; set; }
+        /// <summary> 
+        /// Remark9 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK9")]
+        public string Remark9 { get; set; }
+        /// <summary> 
+        /// Remark10 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REMARK10")]
+        public string Remark10 { get; set; }
+        /// <summary> 
+        /// 工程费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("PROJECTFEE")]
+        public decimal? ProjectFee { get; set; }
+        /// <summary> 
+        /// 前期费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("AGOFEE")]
+        public decimal? AgoFee { get; set; }
+        /// <summary> 
+        /// 勘察费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("PROSPECTFEE")]
+        public decimal? ProspectFee { get; set; }
+        /// <summary> 
+        /// 设计费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("DESIGNFEE")]
+        public decimal? DesignFee { get; set; }
+        /// <summary> 
+        /// 监理费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("CONTROLFEE")]
+        public decimal? ControlFee { get; set; }
+        /// <summary> 
+        /// 环评费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("ENVIRONMENTFEE")]
+        public decimal? EnvironmentFee { get; set; }
+        /// <summary> 
+        /// 安评费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("SAFETYFEE")]
+        public decimal? SafetyFee { get; set; }
+        /// <summary> 
+        /// 扬尘防治增加费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("DUSTFEE")]
+        public decimal? DustFee { get; set; }
+        /// <summary> 
+        /// 掘路费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("DIGGINGFEE")]
+        public decimal? DiggingFee { get; set; }
+        /// <summary> 
+        /// 劳动卫生评价费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("HEALTHFEE")]
+        public decimal? HealthFee { get; set; }
+        /// <summary> 
+        /// 预备费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("READYFEE")]
+        public decimal? ReadyFee { get; set; }
+        /// <summary> 
+        /// 管理费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("MANAGEFEE")]
+        public decimal? ManageFee { get; set; }
+ 
+        /// <summary>
+        /// 管理费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("TOTALMANAGEFEE")]
+        public decimal? TotalManageFee { get; set; } 
+        /// <summary> 
+        /// 其他费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("OTHERFEE")]
+        public decimal? OtherFee { get; set; }
+        /// <summary> 
+        /// 其他费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("SERVICEFEE")]
+        public decimal? ServiceFee { get; set; }
+        /// <summary> 
+        /// 其他费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("BIDDINGFEE")]
+        public decimal? BiddingFee { get; set; }
+        /// <summary> 
+        /// 其他费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("COSTFEE")]
+        public decimal? CostFee { get; set; }
+        /// <summary> 
+        /// 其他费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("REVIEWFEE")]
+        public decimal? ReviewFee { get; set; }
+
+        /// <summary> 
+        /// 专家评审费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("PEERREVIEWFEE")]
+        public decimal? PeerReviewFee { get; set; }
+        /// <summary> 
+        /// 其他前期费 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("OTHERAGOFEE")]
+        public decimal? OtherAgoFee { get; set; }
+        /// <summary> 
+        /// 其他费用的子项其他费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("OTHERFEED")]
+        public decimal? OtherFeeD { get; set; }
+        /// <summary> 
+        /// 一次网长度 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("ONCENETLENGTH")]
+        public decimal? OnceNetLength { get; set; }
+        /// <summary> 
+        /// 二次网长度 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("TWICENETLENGTH")]
+        public decimal? TwiceNetLength { get; set; }
+        /// <summary> 
+        /// 立管长度 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("RISERLENGTH")]
+        public decimal? RiserLength { get; set; }
+        /// <summary> 
+        /// 换热站个数 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("HEATSTANDNUM")]
+        public decimal? HeatStandNum { get; set; }
+        /// <summary> 
+        /// 一次网费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("ONCENETFEE")]
+        public decimal? OnceNetFee { get; set; }
+        /// <summary> 
+        /// 二次网费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("TWICENETFEE")]
+        public decimal? TwiceNetFee { get; set; }
+        /// <summary> 
+        /// 立管费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("RISERFEE")]
+        public decimal? RiserFee { get; set; }
+        /// <summary> 
+        /// 换热站费用 
+        /// </summary> 
+        /// <returns></returns> 
+        [Column("HEATSTANDFEE")]
+        public decimal? HeatStandFee { get; set; }
+        #endregion
+
+        #region 扩展操作 
+        /// <summary> 
+        /// 新增调用 
+        /// </summary> 
+        public void Create()
+        {
+            var user = LoginUserInfo.Get();
+            this.CreateDate = System.DateTime.Now;
+            this.CreateUserId = user.account;
+            this.CreateUserName = user.realName;
+            this.Id = Guid.NewGuid().ToString();
+        }
+        /// <summary> 
+        /// 编辑调用 
+        /// </summary> 
+        /// <param name="keyValue"></param> 
+        public void Modify(string keyValue)
+        {
+            var user = LoginUserInfo.Get();
+            this.UpdateDate = System.DateTime.Now;
+            this.UpdateUserId = user.account;
+            this.UpdateUserName = user.realName;
+            this.Id = keyValue;
+        }
+        #endregion
+    }
+}

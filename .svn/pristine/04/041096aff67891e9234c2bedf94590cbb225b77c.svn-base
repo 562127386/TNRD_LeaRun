@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "附件上传";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script src="~/Content/bootstrap-fileinput/js/fileinput.min.js"></script>
+<script src="~/Content/bootstrap-fileinput/js/locales/zh.js"></script>
+<link href="~/Content/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
+<form id="form1">
+    <div>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modalShow">请选择文件</h4>
+        </div>
+        <div class="modal-body">
+            <input type="file" name="uploadBF" id="uploadBF" multiple class="file-loading" />
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+        var modelName = request("modelName");//模块名称，保存文件夹的名称
+        var jsname = request("jsname");//功能已废弃
+        var elementId = request("elementId");//调用元素的id
+        var windowId = request("windowId");//窗口id：空：找当前框架内打开的tab页面；非空等于SPage：表示框架外页面；非空不等于非空等于SPage：表示框架内layer打开的窗体
+        var fileType = request("fileType");//可上传文件类型（后缀名）,多个文件类型中间用英文逗号隔开(,)
+        var defaultFileType = ['xls', 'xlsx', 'doc', 'docx', 'jpg', 'png', 'gif', 'rar', 'pdf', 'ppt', 'pptx'];//默认文件类型
+        var fileExt = (fileType == null || fileType == undefined || fileType == '') ? defaultFileType : fileType.split(',');
+        var control = $("#uploadBF");
+        var upObj = {
+            language: 'zh', //设置语言
+            uploadUrl: "/LR_SystemModule/Annexes/UploadBFI", //上传的地址
+            uploadExtraData: { "modelName": modelName },//上传至服务器的参数
+            allowedFileExtensions: fileExt,//接收的文件后缀
+            showUpload: true, //显示批量上传按钮
+            showCaption: false,//是否显示标题
+            browseClass: "btn btn-primary", //按钮样式
+            dropZoneEnabled: true,//是否显示拖拽区域
+            //minImageWidth: 50, //图片的最小宽度
+            //minImageHeight: 50,//图片的最小高度
+            //maxImageWidth: 1000,//图片的最大宽度
+            //maxImageHeight: 1000,//图片的最大高度
+            //maxFileSize: 0,//单位为kb，如果为0表示不限制文件大小
+            minFileCount: 0,
+            maxFileCount: 10,
+            msgSizeTooLarge: " \"{name}\" 大小为({size} KB) 最大文件大小为 {maxSize} KB.请重新上传!",//文件的实际大小有些许偏差
+            enctype: 'multipart/form-data',
+            validateInitialCount: true,
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+            msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+            allowedPreviewTypes: ['image']//能够预览的文件类型，如果不限制。文件预览时可能很慢
+        };
+        $('#modalShow').html("[请选择" + upObj.allowedFileExtensions + "]文件");
+        control.fileinput(upObj);
+
+        //导入文件上传成功之后的事件
+        $("#uploadBF").on("fileuploaded", function (event, data, previewId, index) {
+            var result = data.response;
+            if ('T' == result.status) {
+                result.elementId = elementId;
+                if (windowId == '') {
+                    top.learun.frameTab.currentIframe().refreshFiles(result);
+                } else if (windowId == 'SPage') {
+                    top.refreshFiles(result);
+                } else {
+                    //top.frames[windowId].refreshFiles(result);
+                    top["layer_"+windowId].refreshFiles(result)
+                }
+                top.learun.layerClose("UpLoadForm");
+                //$.modalClose();
+            } else {
+                //$.modalAlert(result.msg, "error");
+                top.learun.alert.warning(result.msg);
+            }
+        });
+        //导入文件上传失败之后的事件
+        $('#uploadBF').on('fileuploaderror', function (event, data, msg) {
+            //$.modalAlert("上传失败", "error")
+            top.learun.alert.warning("上传失败！");
+        });
+    });
+</script>
+
+

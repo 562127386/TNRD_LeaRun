@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "履约保函";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                <br>亚行项目及设备信息统计表
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+                        <th class="formTitle" style="">填报单位（盖章）：</th>
+                        <td class="formValue" style=""></td>
+                        <th class="formTitle" style="">填报日期：</th>
+                        <td class="formValue">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日
+                        </td>
+                        @*<th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td style="width:100px;" colspan="2">项目名称</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">项目编号</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">项目计划总投资额（万元）</td>
+                            <td style="width:300px;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">其他建设配套投资额（万元）</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">其他建设配套资金来源</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">项目计划收取配套费（万元）</td>
+                            <td style="width:300px;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">项目计划使用亚行贷款额（万元）</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">供能形式</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">额定供能能力（万元）</td>
+                            <td style="width:300px;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">供能面积（万㎡）</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">计划开工时间及竣工时间</td>
+                            <td style="width:300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">新建/技改</td>
+                            <td style="width:300px;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="18">主要设备清单：</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px;" colspan="3">序号</td>
+                            <td style="width: 150px;" colspan="3">设备名称</td>
+                            <td style="width: 150px;" colspan="3">设备主要参数</td>
+                            <td style="width: 150px;" colspan="3">数量</td>
+                            <td style="width: 150px;" colspan="3">安装地点</td>
+                            <td style="width: 150px;" colspan="3">备注</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                            <td colspan="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+
+                        @*<th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>
+
+@*<td class="formValue">
+    <div id="UpdateUserName" name="UpdateUserName"></div>
+</td>
+            </tr>
+
+        </table>
+    </div>
+</form>*@
+

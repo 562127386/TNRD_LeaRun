@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "项目收入";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div class="lr-layout lr-layout-left-center" id="lr_layout">
+    <div class="lr-layout-left">
+        <div class="lr-layout-wrap">
+            <div class="lr-layout-title">树形目录</div>
+            <div id="tree" class="lr-layout-body"></div>
+        </div>
+    </div>
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap">
+            <div class="lr-layout-title">
+                <ul class="nav nav-tabs" style="height:32px;">
+                    <li role="presentation" class="active" style="height:32px;"><a href="#tab_linkman" data-toggle="tab" style="height:32px;">配套收入</a></li>
+                    <li role="presentation" style="height:32px;"><a href="#tab_file" data-toggle="tab" style="height:32px;">资金支出</a></li>
+                </ul>
+            </div>
+            <div class="lr-layout-tool">
+                @*<div class="lr-layout-tool-left">
+                    <div class="lr-layout-tool-item">
+                        <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;查询</a>
+                    </div>
+                </div>*@
+                <div class="lr-layout-tool-right">
+                    <div class=" btn-group btn-group-sm">
+                        <a id="lr_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                    </div>
+                    <div class=" btn-group btn-group-sm" learun-authorize="yes">
+                        @*<a id="lr_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;新增</a>*@
+                        @*<a id="lr_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+                        <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;删除</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" style="width: 100%;height: 100%;">
+                <!-- 1 -->
+                <div class="tab-pane fade in active" id="tab_linkman" style="width: 100%;height: 100%;">
+                    <div class="lr-layout-body" id="gridtable"></div>
+                </div>
+                <!-- 2 -->
+                <div class="tab-pane fade" id="tab_file" style="width: 100%;height: 100%;">
+                    <div class="lr-layout-body" id="gridtable2"></div>
+                </div>
+                @*<div class="lr-layout-body" id="gridtable"></div>*@
+            </div>
+        </div>
+    </div> 
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/ProjectIncome/Index.js")

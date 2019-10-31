@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "采购报表";
+    Layout = "~/Views/Shared/_ReportTemplate.cshtml";
+}
+<div class="lr-layout ui-report">
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap lr-layout-wrap-notitle">
+            <div class="lr-layout-tool">
+                <div class="lr-layout-tool-left">
+					<div class="lr-layout-tool-item">
+                        <span class="btn btn-sm">&nbsp;项目名称:</span>
+                    </div>
+					<div class="lr-layout-tool-item">
+                        <input id="Name" type="text" class="form-control" placeholder="项目名称" style = "width:160px"/>
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;查询</a>
+                    </div>
+                </div>
+                <div class="lr-layout-tool-right">
+                    <div class="btn-group btn-group-sm" learun-authorize="no">
+                        <a id="lr-replace" class="btn btn-default"><i class="fa fa-refresh"></i>&nbsp;<span class="lrlg">刷新</span></a>
+                        <a id="lr-print" class="btn btn-default"><i class="fa fa-print"></i>&nbsp;<span class="lrlg">打印</span></a>
+                        <a id="lr-export" class="btn btn-default"><i class="fa fa-sign-out"></i>&nbsp;<span class="lrlg">导出</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="lr-layout-grid">
+                <div class="grid-title">资金下达报表</div>
+                <div class="lr-layout-body" id="gridtable"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Content/echarts/echarts.min.js"></script>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/Report/CapitalReport.js")

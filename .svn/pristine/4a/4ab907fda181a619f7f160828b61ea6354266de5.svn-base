@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "付款明细表";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">Id<font face="宋体">*</font></div>
+        <input id="Id" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">BindId<font face="宋体">*</font></div>
+        <input id="BindId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">合同编码<font face="宋体">*</font></div>
+        <input id="PactCode" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">合同名称<font face="宋体">*</font></div>
+        <input id="PactName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">合同类型<font face="宋体">*</font></div>
+        <input id="PactType" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">付款公司编码或设备包<font face="宋体">*</font></div>
+        <input id="PaymentCompanyId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">付款公司<font face="宋体">*</font></div>
+        <input id="PayCompany" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">付款金额<font face="宋体">*</font></div>
+        <input id="PayAmount" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">付款日期<font face="宋体">*</font></div>
+        <input id="PayDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">付款批次<font face="宋体">*</font></div>
+        <input id="PayNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">付款类型<font face="宋体">*</font></div>
+        <div id="PayType" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">凭证号<font face="宋体">*</font></div>
+        <input id="VoucherNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <a id="lr_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;添加</a>
+    </div>
+    <div class="col-xs-12 lr-form-item lr-form-item-grid">
+        <div class="lr-layout-body" id="gridtable"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_NE_Project/Views/PayDatails/Form.js")

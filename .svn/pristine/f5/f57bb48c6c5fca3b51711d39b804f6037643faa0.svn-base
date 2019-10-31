@@ -1,0 +1,281 @@
+﻿using Dapper;
+using Learun.DataBase.Repository;
+using Learun.Util;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Text;
+
+namespace Wizsen_TNRD_EnergyProject.Wizsen_TNRD_Project
+{
+    /// <summary> 
+    /// 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架 
+    /// Copyright (c) 2013-2018 上海力软信息技术有限公司 
+    /// 创 建：超级管理员 
+    /// 日 期：2019-02-26 17:56 
+    /// 描 述：项目管理 
+    /// </summary> 
+    public class ProjectDatailsService : RepositoryFactory
+    {
+        #region 构造函数和属性 
+
+        private string fieldSql;
+        public ProjectDatailsService()
+        {
+            fieldSql = @" 
+                t.Id, 
+                t.BindId, 
+                t.Code, 
+                t.Name, 
+                t.Year, 
+                t.Date, 
+                t.Company, 
+                t.Developers, 
+                t.Address, 
+                t.WorkNo, 
+                t.CoveredArea, 
+                t.HeatingArea, 
+                t.Households, 
+                t.Amount, 
+                t.PipeLength, 
+                t.ImplementYear, 
+                t.Titanict, 
+                t.ProjectInvest, 
+                t.ApprovalTime, 
+                t.ApprovalTitanict, 
+                t.Review, 
+                t.ApprovalFinal, 
+                t.FinalValue, 
+                t.BureauFunds,
+                t.FiscalFunds,
+                t.Estimate, 
+                t.CapitalSource, 
+                t.Node, 
+                t.CreateDate, 
+                t.CreateUserId, 
+                t.CreateUserName, 
+                t.UpdateDate, 
+                t.UpdateUserId, 
+                t.UpdateUserName, 
+                t.Remark1, 
+                t.Remark2, 
+                t.Remark3, 
+                t.Remark4, 
+                t.Remark5, 
+                t.Remark6, 
+                t.Remark7, 
+                t.Remark8, 
+                t.Remark9, 
+                t.Remark10, 
+                t.ProjectFee, 
+                t.AgoFee, 
+                t.ProspectFee, 
+                t.DesignFee, 
+                t.ControlFee, 
+                t.ManageFee,
+                t.EnvironmentFee, 
+                t.SafetyFee, 
+                t.DustFee, 
+                t.DiggingFee, 
+                t.HealthFee, 
+                t.ReadyFee, 
+                t.TotalManageFee,
+                t.OtherFee ,
+                t.pactSumAmount,
+                t.sumPayAmount,
+                t.overAmount,
+                t.Remark
+            ";
+        }
+        #endregion
+
+        #region 获取数据 
+
+        /// <summary> 
+        /// 获取列表数据 
+        /// <summary> 
+        /// <returns></returns> 
+        public IEnumerable<TNRD_Project_DatailsEntity> GetList(string queryJson)
+        {
+            try
+            {
+                //参考写法 
+                //var queryParam = queryJson.ToJObject(); 
+                // 虚拟参数 
+                //var dp = new DynamicParameters(new { }); 
+                //dp.Add("startTime", queryParam["StartTime"].ToDate(), DbType.DateTime); 
+                var strSql = new StringBuilder();
+                strSql.Append("SELECT * ");
+                //strSql.Append(fieldSql);
+                strSql.Append(" FROM TNRD_Project_Datails t ");
+                return this.BaseRepository().FindList<TNRD_Project_DatailsEntity>(strSql.ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        /// <summary> 
+        /// 获取列表分页数据 
+        /// <param name="pagination">分页参数</param> 
+        /// <summary> 
+        /// <returns></returns> 
+        public DataTable GetPageList(Pagination pagination, string queryJson)
+        {
+            try
+            {
+                var strSql = new StringBuilder();
+                strSql.Append("SELECT ");
+                strSql.Append(fieldSql);
+                strSql.Append(" FROM View_TNRD_Project t ");
+                strSql.Append("  WHERE 1=1 ");
+                var queryParam = queryJson.ToJObject();
+                // 虚拟参数 
+                var dp = new DynamicParameters(new { });
+                if (!queryParam["StartTime"].IsEmpty() && !queryParam["EndTime"].IsEmpty())
+                {
+                    dp.Add("startTime", queryParam["StartTime"].ToDate(), DbType.DateTime);
+                    dp.Add("endTime", queryParam["EndTime"].ToDate(), DbType.DateTime);
+                    strSql.Append(" AND ( t.Date >= @startTime AND t.Date <= @endTime ) ");
+                }
+                if (!queryParam["Date"].IsEmpty() && !queryParam["Date"].IsEmpty())
+                {
+                    dp.Add("Date", "%" + queryParam["Date"].ToString().Trim() + "%", DbType.String);
+                    strSql.Append(" AND ( t.Date Like @Date ) ");
+                }
+                //树形结构参数
+                if (!queryParam["Orgin"].IsEmpty())
+                {
+                    dp.Add("Orgin", "%" + queryParam["Orgin"].ToString().Trim() + "%", DbType.String);
+                    strSql.Append(" AND ( t.Dept_Name Like @Orgin ) ");
+                }
+                if (!queryParam["ImplementYear"].IsEmpty())
+                {
+                    //取区间值
+                    strSql.Append(" AND " + queryParam["ImplementYear"].ToString() + ">=substring(ImplementYear,0,case when  charindex('-',ImplementYear)=0 then len(t.ImplementYear)+1 else charindex('-',ImplementYear) end) and " + queryParam["ImplementYear"].ToString() + "<=substring(ImplementYear,charindex('-',ImplementYear)+1,len(ImplementYear))");
+                    //dp.Add("ImplementYear", "%" + queryParam["ImplementYear"].ToString() + "%", DbType.String);
+                    //strSql.Append(" AND t.ImplementYear Like @ImplementYear ");
+                }
+                if (!queryParam["Name"].IsEmpty())
+                {
+                    dp.Add("Name", "%" + queryParam["Name"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.Name Like @Name ");
+                }
+                if (!queryParam["CapitalSource"].IsEmpty())
+                {
+                    dp.Add("CapitalSource", queryParam["CapitalSource"].ToString(), DbType.String);
+                    strSql.Append(" AND t.CapitalSource = @CapitalSource ");
+                }
+                return this.BaseRepository().FindTable(strSql.ToString(),dp, pagination);
+                //return this.BaseRepository().FindList<TNRD_Project_DatailsEntity>(strSql.ToString(), dp, pagination);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        /// <summary> 
+        /// 获取实体数据 
+        /// <param name="keyValue">主键</param> 
+        /// <summary> 
+        /// <returns></returns> 
+        public TNRD_Project_DatailsEntity GetEntity(string keyValue)
+        {
+            try
+            {
+                return this.BaseRepository().FindEntity<TNRD_Project_DatailsEntity>(keyValue);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        #endregion
+
+        #region 提交数据 
+
+        /// <summary> 
+        /// 删除实体数据 
+        /// <param name="keyValue">主键</param> 
+        /// <summary> 
+        /// <returns></returns> 
+        public void DeleteEntity(string keyValue)
+        {
+            try
+            {
+                this.BaseRepository().Delete<TNRD_Project_DatailsEntity>(t => t.Id == keyValue);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        /// <summary> 
+        /// 保存实体数据（新增、修改） 
+        /// <param name="keyValue">主键</param> 
+        /// <summary> 
+        /// <returns></returns> 
+        public void SaveEntity(string keyValue, TNRD_Project_DatailsEntity entity)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(keyValue))
+                {
+                    entity.Modify(keyValue);
+                    this.BaseRepository().Update(entity);
+                }
+                else
+                {
+                    entity.Create();
+                    this.BaseRepository().Insert(entity);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+}

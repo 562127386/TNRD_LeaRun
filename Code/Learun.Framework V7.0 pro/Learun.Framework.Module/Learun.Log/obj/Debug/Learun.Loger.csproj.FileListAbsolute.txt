@@ -1,0 +1,8 @@
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Log\bin\Debug\Learun.Loger.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Log\bin\Debug\Learun.Loger.pdb
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Log\bin\Debug\log4net.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Log\bin\Debug\log4net.xml
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Log\obj\Debug\Learun.Loger.csproj.CoreCompileInputs.cache
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Log\obj\Debug\Learun.Loger.csproj.CopyComplete
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Log\obj\Debug\Learun.Loger.dll
+E:\OneDrive\工作项目\泰能热电\Learun.Framework V7.0 pro\19TAINENG_XM2.0\Code\Learun.Framework V7.0 pro\Learun.Framework.Module\Learun.Log\obj\Debug\Learun.Loger.pdb

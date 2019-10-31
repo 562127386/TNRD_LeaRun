@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "项目列表";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div class="lr-layout lr-layout-left-center" id="lr_layout" style="padding-left: 337px;">
+    <div class="lr-layout-left" style="width:330px">
+        <div class="lr-layout-wrap">
+            <div class="lr-layout-title">
+                树形目录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                @*<input id="ImplementYear" type="text" class="form-control" placeholder="立项年份" style="width:160px;display:inline" readonly="readonly" />
+                <a id="btn_Project_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;查询</a>*@
+            </div>
+            <div id="tree" class="lr-layout-body"></div>
+        </div>
+    </div>
+    <div class="lr-layout lr-layout-center" id="lr_layout">
+        <div class="lr-layout-center">
+            <div class="lr-layout-wrap ">
+                <div>
+                    <div class="lr-layout-tool-left">
+                        <div class="lr-layout-tool-item">
+                            <span class="btn btn-sm">&nbsp;立项时间:</span>
+                        </div>
+                        <div class="lr-layout-tool-item">
+                            <div id="datesearch" style="width:160px"></div>
+                        </div>
+                        @*<div class="lr-layout-tool-item">
+                            <span class="btn btn-sm">&nbsp;实施年份:</span>
+                        </div>
+                        <div class="lr-layout-tool-item">
+                            <input id="ImplementYear2" type="text" class="form-control" placeholder="实施年份" style="width:160px" readonly="readonly" />
+                        </div>*@
+                        <div class="lr-layout-tool-item">
+                            <span class="btn btn-sm">&nbsp;资金来源:</span>
+                        </div>
+                        <div class="lr-layout-tool-item">
+                            <div id="CapitalSource" class="form-control" style="width:160px"></div>
+                        </div>
+                        <div class="lr-layout-tool-item">
+                            <span class="btn btn-sm">&nbsp;项目名称:</span>
+                        </div>
+                        <div class="lr-layout-tool-item">
+                            <input id="Name" type="text" class="form-control" placeholder="项目名称" style="width:160px" />
+                        </div>
+                        <div class="lr-layout-tool-item">
+                            <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;查询</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lr-layout-tool">
+                    <div class="lr-layout-tool-right" style="padding-top: 18px;">
+                        <div class=" btn-group btn-group-sm">
+                            <a id="lr_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                        </div>
+                        <div class=" btn-group btn-group-sm" learun-authorize="yes">
+                            <a id="lr_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                            <a id="lr_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+                            <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                            <a id="lr_print" class="btn btn-default"><i class="fa fa-print"></i>&nbsp;打印</a>
+                            <a id="lr_detail" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;查看</a>
+                            <a id="lr_Uploader" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;添加附件</a>
+                            <a id="lr_Income" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;收款</a>
+                            @*<a id="lr-export" class="btn btn-default"><i class="fa fa-sign-out"></i>&nbsp;<span class="lrlg">导出</span></a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="lr-layout-body" id="gridtable"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/ProjectDatails/Index.js")

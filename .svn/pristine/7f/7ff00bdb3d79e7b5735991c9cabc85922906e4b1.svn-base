@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "履约保函";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                亚行项目台帐
+            </div>
+            @*<div class="print-info">
+                    <table class="form">
+                        <tr>
+                            <th class="formTitle" style="">设备名称：</th>
+                            <td class="formValue" style="">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务单号：</th>
+                            <td class="formValue">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>*@
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td style="width: 50px;">序号</td>
+                            <td style="width: 180px;">项目具体实施内容列表</td>
+                            <td style="width: 60px;">所属子项目名称</td>
+                            @*<td style="width: 200px;" rowspan="1" colspan="2">项目具体实施内容列表</td>*@
+                            <td style="width: 60px;">所属主项目名称</td>
+                            <td style="width: 60px;">合同编号</td>
+                            <td style="width: 60px;">合同值（元）</td>
+                            @*<td style="width: 60px;" rowspan="2">国内资金支付（元）</td>*@
+                            @*<td style="width: 60px;" rowspan="2">亚行资金支付（元）</td>*@
+                            <td style="width: 60px;">资金来源</td>
+                            <td style="width: 60px;">国内资金已支付（元）</td>
+                            <td style="width: 60px;">国内资金未支付（元）</td>
+                            @*<td style="width: 60px;" rowspan="2">亚行贷款已支付（元）</td>
+                                <td style="width: 60px; " rowspan="2">亚行资金未支付（元）</td>*@
+                        </tr>
+                        @*<tr>
+                                <td style="width: 100px;">子项目序号</td>
+                                <td style="width: 100px;">子项目名称</td>
+                            </tr>*@
+                        @{
+                            for (int i = 0; i < @ViewBag.data.Rows.Count; i++)
+                            {
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@ViewBag.data.Rows[i]["ProjectName"] </td>
+                                    @*<td>@ViewBag.data.Rows[i]["BaseCode"] </td>*@
+                                    <td>@ViewBag.data.Rows[i]["BaseSubName"] </td>
+                                    @*<td>@ViewBag.data.Rows[i]["BaseSubCode"]</td>*@
+                                    <td>@ViewBag.data.Rows[i]["BaseName"] </td>
+                                    <td>@ViewBag.data.Rows[i]["Code"] </td>
+                                    <td>@ViewBag.data.Rows[i]["Amount"] </td>
+                                    @*<td>@ViewBag.data.Rows[i]["Name"] </td>
+                                        <td>@ViewBag.data.Rows[i]["ProjectNo"] </td>*@
+                                    <td>@ViewBag.data.Rows[i]["FundSource"]</td>
+                                    <td>@ViewBag.data.Rows[i]["paidAmount"] </td>
+                                    <td>@ViewBag.data.Rows[i]["unpaidAmount"] </td>
+                                    @*<td>@ViewBag.data.Rows[i]["PayType"]</td>
+                                        <td>@ViewBag.data.Rows[i]["Remark"] </td>*@
+                                </tr>
+                            }
+
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+
+                        @*<th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>

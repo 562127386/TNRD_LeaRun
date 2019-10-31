@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "履约保函";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                <br>公开招标评委及采购代表委派单
+            </div>
+            @*<div class="print-info">
+                    <table class="form">
+                        <tr>
+                            <th class="formTitle" style="">设备名称：</th>
+                            <td class="formValue" style="">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务单号：</th>
+                            <td class="formValue">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>*@
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td style="width:100px;" colspan="2">招标项目名称</td>
+                            <td style="width:300px;" colspan="10"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">涉及金额（万元）</td>
+                            <td style="width:300px;" colspan="10"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">项目主要内容</td>
+                            <td style="width:300px;" colspan="10"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">项目实施单位</td>
+                            <td style="width: 300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">开标时间</td>
+                            <td style="width: 300px;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">招标方式</td>
+                            <td style="width: 300px;" colspan="4"></td>
+                            <td style="width:100px;" colspan="2">招标代理单位</td>
+                            <td style="width: 300px;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">投标单位</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">项目实施单位负责人签字</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">拟派出评委</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        <tr>
+                            <td style="width:100px;" colspan="2">拟派出采购单位</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        <tr>
+                            <td style="width:100px;" colspan="2">企业管理部签字</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px;" colspan="2">分管领导审核意见</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        <tr>
+                            <td style="width:100px;" colspan="2">董事长（总经理）批准意见</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        <tr>
+                            <td style="width:100px;" colspan="2">企业管理部签字</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        <tr>
+                            <td style="width:100px;" colspan="2">企业管理部签字</td>
+                            <td style="width:700px;" colspan="10"></td>
+                        </tr>
+
+                        @*<tr>
+                                <td style="width:100px;" rowspan="2">地址、电话</td>
+                                <td style="width:450px;" rowspan="2" colspan="4">
+                                </td>
+                                <td style="width:100px;" rowspan="2">开户行及账号</td>
+                                <td style="width:200px;" colspan="2">
+                                </td>
+                            </tr>*@
+                        @*<tr>
+                                <td style="width:100px;">合同编号</td>
+                                <td style="width:120px;">费用名称</td>
+                                <td style="width:120px;">规格</td>
+                                <td style="width:60px;">单位</td>
+                                <td style="width:60px;">数量</td>
+                                <td style="width:100px;">单价</td>
+                                <td style="width:120px;">金额 </td>
+                                <td style="width:80px;">货币</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>*@
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+
+                        @*<th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>
+

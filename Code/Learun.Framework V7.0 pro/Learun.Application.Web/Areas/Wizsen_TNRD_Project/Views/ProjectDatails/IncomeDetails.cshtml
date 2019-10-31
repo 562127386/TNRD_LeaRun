@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "项目收入";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">ID</div>
+        <input id="Id" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">关联id</div>
+        <input id="BindId" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">项目编号</div>
+        <input id="ProjectNo" type="text" class="form-control" readonly />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">项目名称</div>
+        <input id="ProjectName" type="text" class="form-control" readonly />
+    </div>
+    @*<div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-title">已收金额</div>
+            <input id="CollectionEnd" type="text" class="form-control" readonly />
+        </div>
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-title">未收金额</div>
+            <input id="Collection" type="text" class="form-control" readonly />
+        </div>*@
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">投资计划</div>
+        <input id="BureauFunds" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">计划文号</div>
+        <input id="BureauTitanict" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">投资计划日期</div>
+        <input id="BureauDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})"/>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">预算支出</div>
+        <input id="FiscalFunds" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">财政文号</div>
+        <input id="FiscalTitanict" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">财政文件日期</div>
+        <input id="FiscalDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">收款日期<font face="宋体">*</font></div>
+        <input id="CollectionDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">本次收款<font face="宋体">*</font></div>
+        <input id="Collection" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">凭证号</div>
+        <input id="VoucherNo" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">资金来源</div>
+        <div id="capitalSource" type="text" class="form-control"></div>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">票据类型</div>
+        <div id="Type" type="text" class="form-control" ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">附件<font face="宋体">*</font></div>
+        <div id="fileInfo" style="display: inline-block;margin-right:8px;"></div>
+        <a class="btn btn-primary dropdown-text" href="javascript:open_upload('AdjunctName')"><i class="fa fa-upload"></i>上传</a>
+        <input id="AdjunctName" name="AdjunctName" type="hidden" class="form-control" />
+        <input id="Url" name="Url" type="hidden" class="form-control" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">备注</div>
+        <input id="Remark" type="text" class="form-control" />
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/ProjectDatails/IncomeDetails.js")

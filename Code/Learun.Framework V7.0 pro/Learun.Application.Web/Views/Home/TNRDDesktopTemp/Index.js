@@ -1,0 +1,682 @@
+﻿$(function () {
+    // 时间搜索框 
+   
+    bootstrap(jQuery, top.learun);
+})
+var lr;
+var bootstrap = function ($, learun) {
+    "use strict";
+    var page = {
+        init: function () {
+            lr = learun;
+            gridtable();
+            initChart_Line();
+        }
+    };
+    $('#datesearch').lrdate({
+        dfdata: [
+            //{ name: '今天', begin: function () { return learun.getDate('yyyy-MM-dd 00:00:00') }, end: function () { return learun.getDate('yyyy-MM-dd 23:59:59') } },
+            { name: '近1年', begin: function () { return learun.getDate('yyyy-MM-dd 00:00:00', 'y', -1) }, end: function () { return learun.getDate('yyyy-MM-dd 23:59:59') } },
+            { name: '近3年', begin: function () { return learun.getDate('yyyy-MM-dd 00:00:00', 'y', -3) }, end: function () { return learun.getDate('yyyy-MM-dd 23:59:59') } },
+            { name: '近10年', begin: function () { return learun.getDate('yyyy-MM-dd 00:00:00', 'y', -10) }, end: function () { return learun.getDate('yyyy-MM-dd 23:59:59') } }
+        ],
+        // 月 
+        mShow: false,
+        premShow: false,
+        // 季度 
+        jShow: false,
+        prejShow: false,
+        // 年 
+        ysShow: false,
+        yxShow: false,
+        preyShow: true,
+        yShow: true,
+        // 默认 
+        dfvalue: '0',
+        selectfn: function (begin, end) {
+            startTime = begin;
+            endTime = end;
+            //page.search();
+        }
+    }); 
+    page.init();
+}
+function initChart_origin() {
+    var sqlPie = "select isnull(sum(ProjectFee),0) as '工程费',isnull(sum(AgoFee),0) as '前期费',isnull(sum(ProspectFee),0) as '勘察费',isnull(sum(DesignFee),0) as '设计费',isnull(sum(ControlFee),0) as '监理费',isnull(sum(ManageFee),0) as '管理费',isnull(sum(EnvironmentFee),0) as '环评费',isnull(sum(SafetyFee),0) as '安评费',isnull(sum(DustFee),0) as '扬尘防治增加费',isnull(sum(DiggingFee),0) as '掘路费',isnull(sum(HealthFee),0) as '劳动卫生评价费',isnull(sum(ReadyFee),0) as '预备费',isnull(sum(OtherFee),0) as '其他费用'  from TNRD_Project_Datails";
+    lr.httpPost('/Common/LoadFormDataBySpeciName', { sql: sqlPie }, function (resultData) {
+        // 基于准备好的dom，初始化echarts实例
+        var jsonResult = JSON.parse(resultData.data);
+        var pieChart = echarts.init(document.getElementById('piecontainer'));
+        var pieBottomData = [];
+        var pieData = [];
+        for (var i in jsonResult[0]) {
+            pieBottomData.push(i);
+            pieData.push({ value: jsonResult[0][i], name: i });
+        };
+        var stringFy = JSON.stringify(pieData);
+        // 指定图表的配置项和数据
+        var pieoption = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                bottom: 'bottom',
+                data: pieBottomData
+                //data: ['工程费', '管理费', '监理费', '掘路费', '勘察费', '前期费', '设计费', '预备费']
+            },
+            series: [
+                {
+                    name: '费用占比',
+                    type: 'pie',
+                    radius: '75%',
+                    center: ['50%', '50%'],
+                    label: {
+                        normal: {
+                            formatter: '{b}:{c}: ({d}%)',
+                            textStyle: {
+                                fontWeight: 'normal',
+                                fontSize: 12,
+                                color: '#333'
+                            }
+                        }
+                    },
+                    data: pieData,
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+            ,
+            color: ['#4876FF', '#d78d2f', '#52bbc8', 'rgb(224,134,105)', '#8dd5b4', '#CD6600', '#C1FFC1', '#8B4513']
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        pieChart.setOption(pieoption);
+    });
+    // 基于准备好的dom，初始化echarts实例
+    var lineChart = echarts.init(document.getElementById('linecontainer'));
+    // 指定图表的配置项和数据
+    var lineoption = {
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            bottom: 'bottom',
+            data: ['总投资', '下达资金', '已支付金额', '可支付资金']
+        },
+        grid: {
+            bottom: '8%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['2014年', '2015年', '2016年', '2017年', '2018年 ', '2019年', '2020年']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name: '总投资',
+                type: 'line',
+                stack: '金额',
+                itemStyle: {
+                    normal: {
+                        color: "#fc0d1b",
+                        lineStyle: {
+                            color: "#fc0d1b"
+                        }
+                    }
+                },
+                data: [4830, 5418, 5610, 6210, 4972, 7687, 3297]
+            },
+            {
+                name: '下达资金',
+                type: 'line',
+                stack: '金额',
+                itemStyle: {
+                    normal: {
+                        color: '#344858',
+                        lineStyle: {
+                            color: '#344858'
+                        }
+                    }
+
+                },
+                data: [3213, 2342, 6536, 6374, 2316, 3214, 2394]
+            },
+            {
+                name: '已支付金额',
+                type: 'line',
+                stack: '金额',
+                itemStyle: {
+                    normal: {
+                        color: '#54FF9F',
+                        lineStyle: {
+                            color: '#54FF9F'
+                        }
+                    }
+
+                },
+                data: [3213, 2342, 6536, 6374, 2316, 3214, 2394]
+            },
+            {
+                name: '可支付资金',
+                type: 'line',
+                stack: '金额',
+                itemStyle: {
+                    normal: {
+                        color: '#CDCD00',
+                        lineStyle: {
+                            color: '#CDCD00'
+                        }
+                    }
+
+                },
+                data: [3213, 2342, 6536, 6374, 2316, 3214, 2394]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    lineChart.setOption(lineoption);
+
+    //window.onresize = function (e) {
+    //    pieChart.resize(e);
+    //    lineChart.resize(e);
+    //}
+
+    $(".lr-desktop-panel").mCustomScrollbar({ // 优化滚动条
+        theme: "minimal-dark"
+    });
+}
+
+function initChart_Pie(rowdatas) {
+    var ProjectFee = 0;
+    var AgoFee = 0;
+    var ProspectFee = 0;
+    var DesignFee = 0;
+    var ControlFee = 0;
+    var ManageFee = 0;
+    var EnvironmentFee = 0;
+    var SafetyFee = 0;
+    var DustFee = 0;
+    var DiggingFee = 0;
+    var HealthFee = 0;
+    var ReadyFee = 0;
+    var OtherFee = 0;
+    var feeArray = {};
+    for (var i = 0; i < rowdatas.length; i++) {
+        ProjectFee += lr.convertNumber(rowdatas[i]["ProjectFee"]);
+        AgoFee += lr.convertNumber(rowdatas[i]["AgoFee"]);
+        DesignFee += lr.convertNumber(rowdatas[i]["DesignFee"]);
+        ControlFee += lr.convertNumber(rowdatas[i]["ControlFee"]);
+        ManageFee += lr.convertNumber(rowdatas[i]["ManageFee"]);
+        EnvironmentFee += lr.convertNumber(rowdatas[i]["EnvironmentFee"]);
+        SafetyFee += lr.convertNumber(rowdatas[i]["SafetyFee"]);
+        DustFee += lr.convertNumber(rowdatas[i]["DustFee"]);
+        DiggingFee += lr.convertNumber(rowdatas[i]["DiggingFee"]);
+        HealthFee += lr.convertNumber(rowdatas[i]["HealthFee"]);
+        ReadyFee += lr.convertNumber(rowdatas[i]["ReadyFee"]);
+        OtherFee += lr.convertNumber(rowdatas[i]["OtherFee"]);
+        ProspectFee += lr.convertNumber(rowdatas[i]["ProspectFee"]);
+    }
+    feeArray["工程费"] = ProjectFee.toFixed(2);
+    feeArray["前期费"] = AgoFee.toFixed(2);
+    feeArray["勘察费"] = ProspectFee.toFixed(2);
+    feeArray["设计费"] = DesignFee.toFixed(2);
+    feeArray["监理费"] = ControlFee.toFixed(2);
+    feeArray["管理费"] = ManageFee.toFixed(2);
+    //feeArray["环评费"] = EnvironmentFee.toFixed(2);
+    //feeArray["安评费"] = SafetyFee.toFixed(2);
+    //feeArray["扬尘防治增加费"] = DustFee.toFixed(2);
+    feeArray["掘路费"] = DiggingFee.toFixed(2);
+    //feeArray["劳动卫生评价费"] = HealthFee.toFixed(2);
+    feeArray["预备费"] = ReadyFee.toFixed(2);
+    //feeArray["其他费用"] = OtherFee.toFixed(2);
+    var pieChart = echarts.init(document.getElementById('piecontainer'));
+    var pieBottomData = [];
+    var pieData = [];
+    for (var i in feeArray) {
+        pieBottomData.push(i);
+        pieData.push({ value: feeArray[i], name: i });
+    };
+    var stringData = JSON.stringify(feeArray);
+    // 指定图表的配置项和数据
+    var pieoption = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            bottom: 'bottom',
+            data: pieBottomData
+            //data: ['工程费', '管理费', '监理费', '掘路费', '勘察费', '前期费', '设计费', '预备费']
+        },
+        series: [
+            {
+                name: '费用占比',
+                type: 'pie',
+                radius: '75%',
+                center: ['50%', '50%'],
+                label: {
+                    normal: {
+                        formatter: '{b}:{c}: ({d}%)',
+                        textStyle: {
+                            fontWeight: 'normal',
+                            fontSize: 12,
+                            color: '#333'
+                        }
+                    }
+                },
+                data: pieData,
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+        ,
+        color: ['#4876FF', '#d78d2f', '#52bbc8', 'rgb(224,134,105)', '#8dd5b4', '#CD6600', '#C1FFC1', '#8B4513']
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    pieChart.setOption(pieoption);
+    //// 基于准备好的dom，初始化echarts实例
+    //var lineChart = echarts.init(document.getElementById('linecontainer'));
+    //// 指定图表的配置项和数据
+    //var lineoption = {
+    //    tooltip: {
+    //        trigger: 'axis'
+    //    },
+    //    legend: {
+    //        bottom: 'bottom',
+    //        data: ['总投资', '下达资金', '已支付金额', '可支付资金']
+    //    },
+    //    grid: {
+    //        bottom: '8%',
+    //        containLabel: true
+    //    },
+    //    xAxis: {
+    //        type: 'category',
+    //        boundaryGap: false,
+    //        data: ['2014年', '2015年', '2016年', '2017年', '2018年 ', '2019年', '2020年']
+    //    },
+    //    yAxis: {
+    //        type: 'value'
+    //    },
+    //    series: [
+    //        {
+    //            name: '总投资',
+    //            type: 'line',
+    //            stack: '金额',
+    //            itemStyle: {
+    //                normal: {
+    //                    color: "#fc0d1b",
+    //                    lineStyle: {
+    //                        color: "#fc0d1b"
+    //                    }
+    //                }
+    //            },
+    //            data: [4830, 5418, 5610, 6210, 4972, 7687, 3297]
+    //        },
+    //        {
+    //            name: '下达资金',
+    //            type: 'line',
+    //            stack: '金额',
+    //            itemStyle: {
+    //                normal: {
+    //                    color: '#344858',
+    //                    lineStyle: {
+    //                        color: '#344858'
+    //                    }
+    //                }
+
+    //            },
+    //            data: [3213, 2342, 6536, 6374, 2316, 3214, 2394]
+    //        },
+    //        {
+    //            name: '已支付金额',
+    //            type: 'line',
+    //            stack: '金额',
+    //            itemStyle: {
+    //                normal: {
+    //                    color: '#54FF9F',
+    //                    lineStyle: {
+    //                        color: '#54FF9F'
+    //                    }
+    //                }
+
+    //            },
+    //            data: [3213, 2342, 6536, 6374, 2316, 3214, 2394]
+    //        },
+    //        {
+    //            name: '可支付资金',
+    //            type: 'line',
+    //            stack: '金额',
+    //            itemStyle: {
+    //                normal: {
+    //                    color: '#CDCD00',
+    //                    lineStyle: {
+    //                        color: '#CDCD00'
+    //                    }
+    //                }
+
+    //            },
+    //            data: [3213, 2342, 6536, 6374, 2316, 3214, 2394]
+    //        }
+    //    ]
+    //};
+    //// 使用刚指定的配置项和数据显示图表。
+    //lineChart.setOption(lineoption);
+
+    //window.onresize = function (e) {
+    //    pieChart.resize(e);
+    //    lineChart.resize(e);
+    //}
+
+    $(".lr-desktop-panel").mCustomScrollbar({ // 优化滚动条
+        theme: "minimal-dark"
+    });
+}
+function initChart_Line_origin(rowdatas) {
+    ////获取项目总投资,下达资金
+    //var projectData = {};
+    //var projectAmount = 0;
+    //var allocationAmount = 0;
+    //var paidAmount = 0;
+    //var unpaidAmount = 0;
+    //for (var i = 0; i < rowdatas.length; i++) {
+    //    paidAmount += lr.convertNumber(rowdatas[i]["paySumAmount"]);
+    //    unpaidAmount += lr.convertNumber(rowdatas[i]["overAmount"]);
+    //    //每条合同数据对应项目金额，根据项目Id去重
+    //    var projectId = rowdatas[i]["projectId"];
+    //    var convertData = {};
+    //    convertData[projectId] = rowdatas[i]["projectAmount"] + '_' + rowdatas[i]["FiscalFunds"];
+    //    $.extend(projectData, convertData);
+    //}
+
+
+}
+function initChart_Line(rowdatas) {
+    // 基于准备好的dom，初始化echarts实例
+    var lineChart = echarts.init(document.getElementById('linecontainer'));
+    var sqlLine = " select * from Project_LineChart_View";
+    lr.httpPost('/Common/LoadFormDataBySpeciName', { sql: sqlLine }, function (resultData) {
+        var jsonData = JSON.parse(resultData.data);
+        var bottomData = [];
+        var investAmountData = [];//总资金
+        var reviewAmountData = [];//下达资金
+        var pactAmountData = [];//已支付金额
+        var capableAmountData = [];//可支付资金
+        for (var i = 0; i < jsonData.length; i++) {
+            bottomData.push(jsonData[i]["foundDate"]);
+            investAmountData.push(jsonData[i]["investSumAmount"]);
+            reviewAmountData.push(jsonData[i]["reviewSumAmount"]);
+            pactAmountData.push(jsonData[i]["pactSumAmount"]);
+            capableAmountData.push(jsonData[i]["capableSumAmount"]);
+
+        }
+        // 指定图表的配置项和数据
+        var lineoption = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                bottom: 'bottom',
+                data: ['总投资', '下达资金', '已支付金额', '可支付资金']
+            },
+            grid: {
+                bottom: '8%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: bottomData
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '总投资',
+                    type: 'line',
+                    stack: '金额',
+                    itemStyle: {
+                        normal: {
+                            color: "#fc0d1b",
+                            lineStyle: {
+                                color: "#fc0d1b"
+                            }
+                        }
+                    },
+                    data: investAmountData
+                },
+                {
+                    name: '下达资金',
+                    type: 'line',
+                    stack: '金额',
+                    itemStyle: {
+                        normal: {
+                            color: '#344858',
+                            lineStyle: {
+                                color: '#344858'
+                            }
+                        }
+
+                    },
+                    data: reviewAmountData
+                },
+                {
+                    name: '已支付金额',
+                    type: 'line',
+                    stack: '金额',
+                    itemStyle: {
+                        normal: {
+                            color: '#54FF9F',
+                            lineStyle: {
+                                color: '#54FF9F'
+                            }
+                        }
+
+                    },
+                    data: pactAmountData
+                },
+                {
+                    name: '可支付资金',
+                    type: 'line',
+                    stack: '金额',
+                    itemStyle: {
+                        normal: {
+                            color: '#CDCD00',
+                            lineStyle: {
+                                color: '#CDCD00'
+                            }
+                        }
+
+                    },
+                    data: capableAmountData
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        lineChart.setOption(lineoption);
+    })
+
+}
+function gridtable() {
+    $("#gridtable").jfGrid(
+        {
+            height: 196,
+            //width: $(window).width()*0.65,
+            url: top.$.rootUrl + '/Wizsen_TNRD_Project/ProjectDatails/GetPageList',
+            headData: [
+                //{ label: "项目编码", name: "Code", width: 100, align: "left" },
+                { label: "项目名称", name: "Name", width: 300, align: "left" },
+                {
+                    label: "开始时间", name: "BgeinTime", width: 150, align: "left", formatter: function (value, row, index) {
+                        return lr.formatDate(value, 'yyyy-MM');
+                    }
+                },
+                //{ label: "建设单位", name: "Company", width: 100, align: "left" },
+                //{ label: "开发商", name: "Developers", width: 100, align: "left" },
+                //{ label: "地址", name: "Address", width: 100, align: "left" },
+                { label: "工程编号", name: "WorkNo", width: 150, align: "left" },
+                //{ label: "总建筑面积", name: "CoveredArea", width: 100, align: "left" },
+                { label: "供热面积(万平)", name: "HeatingArea", width: 150, align: "left" },
+                //{ label: "户数", name: "Households", width: 100, align: "left" },
+                //{ label: "实施年份", name: "ImplementYear", width: 100, align: "left" },
+                { label: "总投资", name: "Amount", width: 150, align: "left" },
+                { label: "配套收入", name: "Collection", width: 150, align: "left" },
+                { label: "配套支出", name: "PTPayAmount", width: 150, align: "left" },
+                { label: "自筹支出", name: "ZCPayAmount", width: 150, align: "left" },
+                //{ label: "立项(概算)文号", name: "Titanict", width: 200, align: "left" },
+                //{ label: "投资批复时间", name: "ApprovalTime", width: 200, align: "left" },
+                //{ label: "预算批复文号", name: "ApprovalTitanict", width: 200, align: "left" },
+                //{ label: "预算评审值", name: "Review", width: 100, align: "left" },
+                //{ label: "决算值", name: "FinalValue", width: 100, align: "left" },
+                //{ label: "概算", name: "Estimate", width: 100, align: "left" },
+                //{ label: '工程费', name: 'ProjectFee', width: 100, align: "left" },
+                //{ label: '前期费', name: 'AgoFee', width: 100, align: "left" },
+                //{ label: '勘察费', name: 'ProspectFee', width: 100, align: "left" },
+                //{ label: '设计费', name: 'DesignFee', width: 100, align: "left" },
+                //{ label: '监理费', name: 'ControlFee', width: 100, align: "left" },
+                //{ label: '管理费', name: 'ManageFee', width: 100, align: "left" },
+                //{ label: '环评费', name: 'EnvironmentFee', width: 100, align: "left" },
+                //{ label: '安评费', name: 'SafetyFee', width: 100, align: "left" },
+                //{ label: '扬尘防治增加费', name: 'DustFee', width: 100, align: "left" },
+                //{ label: '掘路费', name: 'DiggingFee', width: 100, align: "left" },
+                //{ label: '劳动卫生评价费', name: 'HealthFee', width: 100, align: "left" },
+                //{ label: '预备费', name: 'ReadyFee', width: 100, align: "left" },
+                //{ label: '总管理费', name: 'TotalManageFee', width: 100, align: "left" },
+                //{ label: '其他费用', name: 'OtherFee', width: 100, align: "left" },
+                //{ label: "备注", name: "Remark", width: 100, align: "left" },
+            ],
+            isPage: true,
+            onSelectRow: function (rowData) {
+                var queryJson = JSON.stringify({
+                    ProjectNo: rowData.Code
+                });
+                $("#gridtable2").jfGridSet('reload', { queryJson });
+                var rowArray = [];
+                rowArray.push(rowData)
+                initChart_Pie(rowArray);
+
+            },
+
+            onRenderComplete: function (rowdatas) {
+                //加载图表
+                initChart_Pie(rowdatas);
+            }
+
+        });
+    var param = { Name: '' } || {};
+    $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
+    $("#gridtable2").jfGrid({
+        height: 160,
+        url: top.$.rootUrl + '/Wizsen_TNRD_Project/Wizsen_TNRD_Pact/GetPageList',
+        headData: [
+            //{ label: "ID", name: "Id", width: 100, align: "left" },
+            //{ label: "项目编码", name: "ProjectNo", width: 100, align: "left" },
+            { label: "项目名称", name: "ProjectName", width: 300, align: "left" },
+            //{ label: "合同编码", name: "Code", width: 150, align: "left" },
+            { label: "合同名称", name: "Name", width: 300, align: "left" },
+            { label: "对方单位", name: "supplier", width: 300, align: "left" },
+            { label: "合同金额", name: "Amount", width: 150, align: "left" },
+            { label: "应付金额", name: "payableMoney", width: 150, align: "left" },
+            {
+                label: "已付金额", name: "paySumAmount", width: 150, align: "left"
+            },
+
+            //{ label: "合同类型", name: "Type", width: 100, align: "left" },
+            //{ label: "结算金额", name: "Settlement", width: 100, align: "left" },
+            //{ label: "立项年份", name: "ProjectYear", width: 100, align: "left" },
+            //{ label: "预算金额", name: "BudgetAmount", width: 100, align: "left" },
+            //{ label: "入账金额", name: "BookedAmount", width: 100, align: "left" },
+            //{ label: "挂账金额", name: "HangAmount", width: 100, align: "left" },
+            //{ label: "转资", name: "TurnAmount", width: 100, align: "left" },
+            {
+                label: "付款比例", name: "Ratio", width: 150, align: "left",
+                formatter: function (value, row, index) {
+                    return (row.paySumAmount / row.payableMoney * 100).toFixed(2)+"%";
+                }
+            },
+            {
+                label: "履约欠款", name: "UnPaidAmount", width: 150, align: "left",
+                formatter: function (value, row, index) {
+                    return row.payableMoney - row.paySumAmount;
+                }
+            },
+            //{ label: "发生日期", name: "SignDate", width: 100, align: "left" },
+            //{ label: "发生期间", name: "SignTerm", width: 100, align: "left" },
+            //{ label: "发生年份", name: "SignYear", width: 100, align: "left" },
+            //{ label: "财务凭证", name: "Voucher", width: 100, align: "left" },
+            //{ label: "付款类型", name: "PayType", width: 100, align: "left" },
+            //{ label: "资金来源", name: "FundSource", width: 100, align: "left" },
+            //{ label: "备注", name: "Remark", width: 100, align: "left" },
+        ],
+        isPage: true,
+        onSelectRow: function (rowData) {
+            var par = {};
+            var currentId = learun.frameTab.iframeId;
+            par.F_ModuleId = currentId + "_edit";
+            par.F_FullName = "项目信息";
+            par.F_UrlAddress = '/Wizsen_NE_Project/ProjectDatails/Detail?keyValue=' + rowData.Id + '&Code=' + rowData.Code;
+            learun.frameTab.open(par);
+        },
+        onRenderComplete: function (rowdatas) {
+            //initChart_Line(rowdatas);
+        }
+
+    })
+    var param2 = { ProjectNo: '' } || {};
+    $('#gridtable2').jfGridSet('reload', { queryJson: JSON.stringify(param2) });
+}
+function aclick(keyValue) {
+    var par = {};
+    var currentId = lr.frameTab.iframeId;
+    par.F_ModuleId = currentId + "_edit";
+    par.F_FullName = "采购合同";
+    par.F_UrlAddress = '/Wizsen_NE_Project/PactPurchase/Detail?keyValue=' + keyValue;
+    lr.frameTab.open(par);
+    //var parentId = top.$.jfinetab.getCurrentTabId();
+    //top.$.jfinetab.addTabContent("/TN_XM/TN_HT_CG/Details?keyValue=" + keyValue, "采购合同管理--查看", parentId + "_edit", parentId);
+}
+
+//function initSelect() {
+//    $.ajax({
+//        url: "/Common/LoadSelectData",
+//        type: "get",
+//        data: { sql: "select F_ItemName as name,F_ItemValue as value from dbo.LR_Base_DataItemDetail t where exists(select 1 from dbo.LR_Base_DataItem where t.F_ItemId=F_ItemId and F_ItemCode='Year') " },
+//        dataType: "json",
+//        success: function (msg) {
+//            var jsonData = JSON.parse(msg.data);
+//            for (var i in jsonData) {
+//                //$("ulId").append("<a><i></i>&nbsp;<span class=\"lrlg\">导出Excel</span></a>");
+//                $("#ulId").append("<li <a  onclick='searchByYear(" + jsonData[i].value +")'><i></i>&nbsp;<span class=\"lrlg\"></span></a>" + jsonData[i].value+"</li>");
+//            }
+//            //$.parser.parse($("#ulId"));
+
+
+//        },
+//        error: function () {
+
+//        }
+//    });
+//}
+
+function searchByYear(year) {
+    if (year.text.trim() != "全部") {
+        var param = { Date: year.text } || {};
+    } else {
+        var param = { Date: '' } || {};
+    }
+    $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
+}

@@ -1,0 +1,190 @@
+﻿@{
+    ViewBag.Title = "设备卡";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+
+<div class="print-box" style="padding:5px;width:700px">
+    <div id="print">
+        <div style="font-size: 22px;text-align: center; line-height: 50px;">
+            <br>亚行项目设备卡片
+        </div>
+        <div class="print-table" >
+            <table border="1" style="width:600px; margin: auto;" >
+                <tbody>
+                    <tr>
+                        <td style="width:100px;" colspan="2">设备名称</td>
+                        <td style="width:300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.Name" />
+                        </td>
+                        <td style="width:100px;" colspan="2">设备编号</td>
+                        <td style="width:300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.Code" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">所属项目</td>
+                        <td style="width:300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.ProjectName" />
+                        </td>
+                        <td style="width:100px;" colspan="2">项目编号</td>
+                        <td style="width:300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.ProjectNo" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">所属合同</td>
+                        <td style="width: 700px;" colspan="10">亚行项目<span>@ViewBag.facility.PurchaseName</span>合同</td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">合同编号</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.PurchaseNo" />
+                        </td>
+                        <td style="width:100px;" colspan="2">发票号</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">设备价格（元）</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.Price" />
+                        </td>
+                        <td style="width:100px;" colspan="2">资产类别</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.Classify" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">安装地点</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.ShippingAddress" />
+                        </td>
+                        <td style="width:100px;" colspan="2">设备型号</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.Model" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">制造厂家</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.Customer" />
+                        </td>
+                        <td style="width:100px;" colspan="2">出厂编号</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">制造日期</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                        <td style="width:100px;" colspan="2">移交日期</td>
+                        <td style="width: 300px;" colspan="2">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">安装日期</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                        <td style="width:100px;" colspan="2">投运日期</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" rowspan="3" colspan="2">设备主要参数</td>
+                        <td style="width:350px;" colspan="5">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                        <td style="width:350px;" colspan="5">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                        <td colspan="5">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                        <td colspan="5">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">采购单位名称</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.Purchase.Organiz" />
+                        </td>
+                        <td style="width:100px;" colspan="2">采购单位签字</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">使用单位名称</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                        <td style="width:100px;" colspan="2">使用单位签字</td>
+                        <td style="width: 300px;" colspan="4">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px; height:100px;" rowspan="2" colspan="2">设备验收情况</td>
+                        <td style="width:200px;" colspan="4">开箱检验情况：</td>
+                        <td style="width:500px;" colspan="6">
+
+                            <input type="checkbox" id="F_FullName" value=""> 产品合格证，各壹份；
+                            <br /> <input type="checkbox" id="F_FullName" value="">产品使用说明书，各壹份；
+                            <br /> <input type="checkbox" id="F_FullName" value="">产品检验报告，共壹份；
+                            <br /> <input type="checkbox" id="F_FullName" value="">上述所到货物与其装箱单完全一致，其外观完好无损。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:200px;" colspan="4">不合格品控制情况：</td>
+                        <td style="width:500px;" colspan="6">
+                            <input type="checkbox" id="F_FullName" value="">没有开具不合格项报告；
+                            <br /> <input type="checkbox" id="F_FullName" value="">共开具不合格项报告张，其编号如下：
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">设备档案资料</td>
+                        <td style="width: 700px;" colspan="10">
+                            <input type="text" class="form-control" id="F_FullName" value="@ViewBag.facility.EquipmentState" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px;" colspan="2">备注</td>
+                        <td style="width: 700px;" colspan="10">
+                            <input type="text" class="form-control" id="F_FullName" value="" />
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="print-info">
+            <table class="form" style="width:600px; margin: auto;">
+                <tr>
+                    <th style="width:100px; text-align: center;">资产类别：</th>
+                    <td style="width: 500px; text-align: center;" colspan="5">
+                        1、房屋建筑物； 2、机器设备； 3、运输工具； 4 、办公设备。
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+</div>

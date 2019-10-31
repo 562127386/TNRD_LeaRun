@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "项目信息";
+    Layout = "~/Views/Shared/_Detail.cshtml";
+}
+@Html.AppendCssFile("/Areas/Wizsen_NE_Project/Views/ProjectDatails/AdjunctIndex.css")
+<script src="~/Content/bootstrap/bootstrap.min.js"></script>
+<div class="lr-layout">
+
+    <div class="lr-layout-wrap lr-form-wrap" style="padding-top:20px;">
+        @*<div class="col-xs-4 jfine-form-header_l">
+            <span class="jfine-form-logo">
+                <img src="/Content/images/formlogo.png" height="50" />
+            </span>
+        </div>
+        <div class="col-xs-4 jfine-form-header_c">
+            <span class="jfine-form-header-title">项目信息</span>
+        </div>
+        <div class="col-xs-4 jfine-form-header_r">
+
+        </div>*@
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">编码</div>
+            <div id="Code" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">名称</div>
+            <div id="Name" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">主项目编码</div>
+            <div id="BaseCode" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">主项目名称</div>
+            <div id="BaseName" class="lr-form-item-value"></div>
+        </div>
+
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">子项目编码</div>
+            <div id="BaseSubCode" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">子项目名称</div>
+            <div id="BaseSubName" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">开始时间</div>
+            <div id="BeginDate" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">结束时间</div>
+            <div id="EndDate" class="lr-form-item-value"></div>
+        </div>
+
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-detail-title">所属公司</div>
+            <div id="CompanyName" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-detail-title">项目状态</div>
+            <div id="ProjectState" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-detail-title">设备包</div>
+            <div id="Package" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-detail-title">项目负责人</div>
+            <div id="Principal" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-12 lr-form-item">
+            <div class="lr-form-item-detail-title">项目负责人电话</div>
+            <div id="Phone" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+
+            @*<ul role="presentation" class="active"><a href="#tab_linkman" data-toggle="tab">添加附件</a></ul>*@
+            <a id="lr_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;新增</a>
+            <a id="lr_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+            <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+            <!-- 1 -->
+            <div class="tab-pane fade in active" id="tab_linkman">
+                <div id="productgird"></div>
+            </div>
+
+            <!-- 2 -->
+            @*<div class="tab-pane fade" id="tab_file">
+                <div id="productgird2"></div>
+            </div>
+
+            <!-- 3 -->
+            <div class="tab-pane fade" id="tab_file2">
+                <div id="productgird3"></div>
+            </div>
+
+            <!-- 4 -->
+            <div class="tab-pane fade" id="tab_file3">
+                <div id="productgird4"></div>
+            </div>*@
+        </div>
+    </div>
+
+    @*<div class="top-btn-tool">
+        <a id="close" class="btn btn-default">关闭</a>
+    </div>*@
+</div>
+
+@Html.AppendJsFile("/Areas/Wizsen_NE_Project/Views/ProjectDatails/AdjunctIndex.js")
+

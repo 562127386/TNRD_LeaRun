@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "项目附件";
+    Layout = "~/Views/Shared/_Detail.cshtml";
+}
+<script src="~/Content/bootstrap/bootstrap.min.js"></script>
+<div class="lr-layout">
+    <div class="lr-layout-wrap lr-form-wrap" style="padding-top:20px;">
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">项目编码</div>
+            <div id="Code" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">项目名称</div>
+            <div id="Name" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">立项年份</div>
+            <div id="Year" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">建设单位</div>
+            <div id="Company" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">开发商</div>
+            <div id="Developers" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">地址</div>
+            <div id="Address" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">内部工号</div>
+            <div id="WorkNo" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">总建筑面积</div>
+            <div id="CoveredArea" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">户数</div>
+            <div id="Households" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">实施年份</div>
+            <div id="ImplementYear" class="lr-form-item-value"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">总投资</div>
+            <div id="Amount" class="lr-form-item-value"></div>
+        </div>
+        @*<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">概算</div>
+            <div id="Estimate" class="lr-form-item-value"></div>
+        </div>*@
+        <div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">立项时间</div>
+            <div id="Date" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">立项文号</div>
+            <div id="Titanict" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">投资批复时间</div>
+            <div id="ApprovalTime" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">批复文号</div>
+            <div id="ApprovalTitanict" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">预算评审值</div>
+            <div id="Review" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">决算值</div>
+            <div id="FinalValue" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">资金来源</div>
+            <div id="CapitalSource" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">项目节点</div>
+            <div id="Node" class="lr-form-item-value"></div>
+        </div>
+		@*<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">工程费</div>
+            <div id="ProjectFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">前期费</div>
+            <div id="AgoFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">勘察费</div>
+            <div id="ProspectFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">设计费</div>
+            <div id="DesignFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">监理费</div>
+            <div id="ControlFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">环评费</div>
+            <div id="EnvironmentFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">安评费</div>
+            <div id="SafetyFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">扬尘防治增加费</div>
+            <div id="DustFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">掘路费</div>
+            <div id="DiggingFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">劳动卫生评价费</div>
+            <div id="HealthFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">预备费</div>
+            <div id="ReadyFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">管理费</div>
+            <div id="ManageFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">其他费用</div>
+            <div id="OtherFee" class="lr-form-item-value"></div>
+        </div>
+		<div class="col-xs-3 lr-form-item">
+            <div class="lr-form-item-detail-title">备注</div>
+            <div id="Remark" class="lr-form-item-value"></div>
+        </div>*@
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+
+            @*<ul role="presentation" class="active"><a href="#tab_linkman" data-toggle="tab">添加附件</a></ul>*@
+            <a id="lr_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;新增</a>
+            <a id="lr_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+            <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+            <!-- 1 -->
+            <div class="tab-pane fade in active" id="tab_linkman">
+                <div id="productgird"></div>
+            </div>
+
+            <!-- 2 -->
+            @*<div class="tab-pane fade" id="tab_file">
+                    <div id="productgird2"></div>
+                </div>
+
+                <!-- 3 -->
+                <div class="tab-pane fade" id="tab_file2">
+                    <div id="productgird3"></div>
+                </div>
+
+                <!-- 4 -->
+                <div class="tab-pane fade" id="tab_file3">
+                    <div id="productgird4"></div>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/ProjectDatails/AdjunctIndex.js")
+

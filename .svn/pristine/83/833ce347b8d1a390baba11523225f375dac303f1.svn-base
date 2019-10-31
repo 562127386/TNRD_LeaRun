@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B125822-3D16-4AB2-8F4B-E5794C46FB59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wizsen_TNRD_EnergyProject</RootNamespace>
+    <AssemblyName>Wizsen_TNRD_EnergyProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wizsen_TNRD_Project\PayDatails\TNRD_Pay_DatailsEntity.cs" />
+    <Compile Include="Wizsen_TNRD_Project\PayDatails\PayDatailsService.cs" />
+    <Compile Include="Wizsen_TNRD_Project\PayDatails\PayDatailsIBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\PayDatails\PayDatailsBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\AdjunctDatails\TNRD_Adjunct_DatailsEntity.cs" />
+    <Compile Include="Wizsen_TNRD_Project\AdjunctDatails\AdjunctDatailsService.cs" />
+    <Compile Include="Wizsen_TNRD_Project\AdjunctDatails\AdjunctDatailsIBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\AdjunctDatails\AdjunctDatailsBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectDatails\TNRD_Project_DatailsEntity.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectDatails\TNRD_Project_EstimateEntity.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectDatails\ProjectDatailsService.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectDatails\ProjectDatailsBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectDatails\ProjectDatailsIBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\Wizsen_TNRD_Pact\TNRD_Pact_DatailsEntity.cs" />
+    <Compile Include="Wizsen_TNRD_Project\Wizsen_TNRD_Pact\Wizsen_TNRD_PactService.cs" />
+    <Compile Include="Wizsen_TNRD_Project\Wizsen_TNRD_Pact\Wizsen_TNRD_PactBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\Wizsen_TNRD_Pact\Wizsen_TNRD_PactIBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectCapital\TNRD_Project_CapitalEntity.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectCapital\ProjectCapitalService.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectCapital\ProjectCapitalIBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\ProjectCapital\ProjectCapitalBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\FacilityBase\TNRD_Facility_BaseEntity.cs" />
+    <Compile Include="Wizsen_TNRD_Project\FacilityBase\FacilityBaseService.cs" />
+    <Compile Include="Wizsen_TNRD_Project\FacilityBase\FacilityBaseIBLL.cs" />
+    <Compile Include="Wizsen_TNRD_Project\FacilityBase\FacilityBaseBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">
+      <Project>{e9877a25-801b-4605-ad35-e6306916513c}</Project>
+      <Name>Learun.Application.Organization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Learun.Cache\Learun.Cache.Base\Learun.Cache.Base.csproj">
+      <Project>{975f2cb8-605c-4add-b365-b97bf844f0fe}</Project>
+      <Name>Learun.Cache.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Learun.Cache\LeaRun.Cache.Factory\Learun.Cache.Factory.csproj">
+      <Project>{68902fcf-c439-4010-b17b-2499c972ee33}</Project>
+      <Name>Learun.Cache.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Learun.Cache\Learun.Cache.Redis\Learun.Cache.Redis.csproj">
+      <Project>{13808645-2013-4896-8ee2-65144e222c69}</Project>
+      <Name>Learun.Cache.Redis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Learun.Db\Learun.DataBase.Repository\Learun.DataBase.Repository.csproj">
+      <Project>{7f5e2a6c-c859-494a-8577-75bf9603a80c}</Project>
+      <Name>Learun.DataBase.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Learun.Util\Learun.Util.Operat\Learun.Util.Operat.csproj">
+      <Project>{ad556b7a-e0d1-41bd-9d5b-18f8502e9f33}</Project>
+      <Name>Learun.Util.Operat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Learun.Util\Learun.Util\Learun.Util.csproj">
+      <Project>{cf8ae293-88ab-436c-9720-a8386ba5d7b7}</Project>
+      <Name>Learun.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Learun.Application.Base\Learun.Application.Base.csproj">
+      <Project>{0cdd0dc8-74cf-4c71-923c-66204a8923d3}</Project>
+      <Name>Learun.Application.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

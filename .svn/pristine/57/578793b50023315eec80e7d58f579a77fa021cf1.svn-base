@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "飞扬版风格";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div class="lr-desktop-panel">
+    <div class="rows" style="overflow: hidden;">
+        <div style="float: left; width:100%; margin-right: 1%;">
+            <div style="height: 265px; border: 1px solid #e6e6e6; background-color: #fff;">
+                <div class="lr-layout-body" id="gridtable"></div>
+            </div>
+        </div>
+    </div>
+    <div class="rows" style="margin-bottom: 1%; border: 1px solid #e6e6e6; overflow: hidden; padding-left: 1px;">
+        <div class="lr-layout-body" id="gridtable2"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Views/Home/AdminDesktopLeader/index.js")
+
+
+
+
+
+
+
+
+
+
+
+
+

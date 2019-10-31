@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "付款明细表";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">Id<font face="宋体">*</font></div>
+        <input id="Id" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">BindId<font face="宋体">*</font></div>
+        <input id="BindId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item" hidden>
+        <div class="lr-form-item-title">合同编码<font face="宋体">*</font></div>
+        <input id="PactCode" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">合同名称<font face="宋体">*</font></div>
+        <input id="PactName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly="readonly" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">合同类型<font face="宋体">*</font></div>
+        <input id="PactType" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly="readonly" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">对方单位<font face="宋体">*</font></div>
+        <input id="PayCompany" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly="readonly" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">入账金额<font face="宋体">*</font></div>
+        <input id="bookedAmount" type="text" class="form-control" isvalid="yes" checkexpession="Double" oninput="onBooked()" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">本次支付<font face="宋体">*</font></div>
+        <input id="PayAmount" type="text" class="form-control" isvalid="yes" checkexpession="Double" />
+    </div>
+
+    @*<div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">挂账金额<font face="宋体">*</font></div>
+        <input id="hangAmount" type="text" class="form-control" isvalid="yes" checkexpession="Double" />
+    </div>*@
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">付款日期<font face="宋体">*</font></div>
+        <input id="PayDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd '})" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    @*<div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-title">付款批次<font face="宋体">*</font></div>
+            <input id="PayNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>*@
+    @*<div class="col-xs-6 lr-form-item">
+            <div class="lr-form-item-title">付款类型<font face="宋体">*</font></div>
+            <div id="PayType" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+        </div>*@
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">凭证号<font face="宋体">*</font></div>
+        <input id="VoucherNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">资金来源</div>
+        <div id="capitalSource" type="text" class="form-control"></div>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">票据类型</div>
+        <div id="Type" type="text" class="form-control" ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">附件<font face="宋体">*</font></div>
+        <div id="fileInfo" style="display: inline-block;margin-right:8px;"></div>
+        <a class="btn btn-primary dropdown-text" href="javascript:open_upload('AdjunctName')"><i class="fa fa-upload"></i>上传</a>
+        <input id="AdjunctName" name="AdjunctName" type="hidden" class="form-control" />
+        <input id="Url" name="Url" type="hidden" class="form-control" />
+    </div>
+    <div class="col-xs-12 lr-form-item lr-form-item-grid">
+        <div class="lr-layout-body" id="gridtable"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/Wizsen_TNRD_Project/Views/Wizsen_TNRD_Pact/PayDetails.js")

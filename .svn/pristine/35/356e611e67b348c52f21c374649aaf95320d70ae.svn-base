@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "履约保函";
+    Layout = "~/Views/Shared/_PDFExport.cshtml";
+}
+
+<form id="form1" runat="server">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a onclick="btn_print()" href="javascript:void(0)"><span class="icon icon-print">&nbsp;</span>打印</a>
+    </div>
+    <div class="print-box" style="padding:5px;">
+        <div id="print">
+            <div style="font-size: 22px;text-align: center; line-height: 50px;">
+                亚行合同台帐
+            </div>
+            @*<div class="print-info">
+                    <table class="form">
+                        <tr>
+                            <th class="formTitle" style="">设备名称：</th>
+                            <td class="formValue" style="">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务单号：</th>
+                            <td class="formValue">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">制单日期：</th>
+                            <td class="formValue" style="width:110px;">
+                                <input type="text" style="width:98%;" class="form-control " value="" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>*@
+            <div class="print-table">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td style="width: 50px;">序号</td>
+                            <td style="width: 120px;">采购包合同名称</td>
+                            <td style="width: 120px;">采购包合同编号</td>
+                            <td style="width: 120px;">合同金额（元）</td>
+                            <td style="width: 120px; ">乙方单位名称</td>
+                            <td style="width: 120px;">合同签订时间</td>
+                            <td style="width: 120px;">项目名称</td>
+                            <td style="width: 120px;">项目编号</td>
+                            <td style="width: 120px;">项目单位</td>
+                            <td style="width: 120px;">招标代理公司</td>
+                            <td style="width: 120px;">招标平台</td>
+                            <td style="width: 120px;">备注</td>
+                        </tr>
+
+                        @{
+                            for (int i = 0; i < @ViewBag.data.Rows.Count; i++)
+                            {
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@ViewBag.data.Rows[i]["HTName"]</td>
+                                    <td>@ViewBag.data.Rows[i]["HTCode"] </td>
+                                    <td>@ViewBag.data.Rows[i]["AdvancePayment"] </td>
+                                    <td>@ViewBag.data.Rows[i]["Supplier"] </td>
+                                    <td>@ViewBag.data.Rows[i]["SigningDate"]</td>
+                                    <td>@ViewBag.data.Rows[i]["ProjectName"] </td>
+                                    <td>@ViewBag.data.Rows[i]["ProjectNo"] </td>
+                                    <td>@ViewBag.data.Rows[i]["CompanyName"]</td>
+                                    <td>@ViewBag.data.Rows[i]["CreateDate"] </td>
+                                    <td>@ViewBag.data.Rows[i]["StorageTime"]</td>
+                                    <td>@ViewBag.data.Rows[i]["Remark"] </td>
+                                </tr>
+                            }
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="print-info">
+                <table class="form">
+                    <tr>
+
+                        @*<th class="formTitle" style="">业务员：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>
+                            <th class="formTitle" style="">业务处：</th>
+                            <td class="formValue">
+                                <input type="text" class="form-control " value="" />
+                            </td>*@
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</form>
